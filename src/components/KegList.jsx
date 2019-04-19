@@ -41,15 +41,15 @@ function KegList() {
         <div className="main">
             
             <div className="list">
-            {masterKegList.map((keg, index) => 
-                <Keg name={keg.name}
-                    brand={keg.brand}
-                    price={keg.price}
-                    alcoholContent={keg.alcoholContent}
-                    type={keg.type}
-                    fill={keg.fill}
-                    key={index} />
-            )}
+                {masterKegList.map((keg, index) => 
+                    <Keg name={keg.name}
+                        brand={keg.brand}
+                        price={keg.price}
+                        alcoholContent={keg.alcoholContent}
+                        type={keg.type}
+                        fill={keg.fill}
+                        key={index} />
+                )}
             </div>
             <style jsx>{`
                 .main {

@@ -6,7 +6,7 @@ function Header(){
         fontFamily: 'Arial',
         color: '#b6c5aa',
         textDecoration: 'none'
-    }
+    };
     return(
         <div>
             <h1>Reactive Tap Room</h1>
