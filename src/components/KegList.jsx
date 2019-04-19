@@ -1,47 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Keg from './Keg';
 
-let masterKegList = [
-    {
-        name: 'Hoppathon',
-        brand: 'Brew Hop',
-        price: 5,
-        alcoholContent: 5.5,
-        type: 'IPA',
-        fill: 124
-    },
-    {
-        name: 'Green Flash',
-        brand: 'Brew Hop',
-        price: 6,
-        alcoholContent: 5.5,
-        type: 'IPA',
-        fill: 10
-    },
-    {
-        name: 'Calm Bucha',
-        brand: 'Bucha Brothers',
-        price: 4,
-        alcoholContent: 0.5,
-        type: 'Kombucha',
-        fill: 124
-    },
-    {
-        name: 'Dark Soul',
-        brand: 'West Coast Malt',
-        price: 6,
-        alcoholContent: 7.5,
-        type: 'Stout',
-        fill: 60
-    }
-];
 
-function KegList() {
+function KegList(props) {
     return(
         <div className="main">
             
             <div className="list">
-                {masterKegList.map((keg, index) => 
+                {props.kegList.map((keg, index) => 
                     <Keg name={keg.name}
                         brand={keg.brand}
                         price={keg.price}
@@ -67,6 +34,10 @@ function KegList() {
             `}</style>
         </div>
     );
+}
+
+KegList.propTypes = {
+    kegList: PropTypes.array
 }
 
 export default KegList;

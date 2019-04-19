@@ -13,47 +13,48 @@ class App extends React.Component {
         super(props);
         this.state = {
             masterKegList: [
-            //     {
-            //         name: 'Hoppathon',
-            //         brand: 'Brew Hop',
-            //         price: 5,
-            //         alcoholContent: 5.5,
-            //         type: 'IPA',
-            //         fill: 124
-            //     },
-            //     {
-            //         name: 'Green Flash',
-            //         brand: 'Brew Hop',
-            //         price: 6,
-            //         alcoholContent: 5.5,
-            //         type: 'IPA',
-            //         fill: 10
-            //     },
-            //     {
-            //         name: 'Calm Bucha',
-            //         brand: 'Bucha Brothers',
-            //         price: 4,
-            //         alcoholContent: 0.5,
-            //         type: 'Kombucha',
-            //         fill: 124
-            //     },
-            //     {
-            //         name: 'Dark Soul',
-            //         brand: 'West Coast Malt',
-            //         price: 6,
-            //         alcoholContent: 7.5,
-            //         type: 'Stout',
-            //         fill: 60
-            //     }
+                {
+                    name: 'Hoppathon',
+                    brand: 'Brew Hop',
+                    price: 5,
+                    alcoholContent: 5.5,
+                    type: 'IPA',
+                    fill: 124
+                },
+                {
+                    name: 'Green Flash',
+                    brand: 'Brew Hop',
+                    price: 6,
+                    alcoholContent: 5.5,
+                    type: 'IPA',
+                    fill: 10
+                },
+                {
+                    name: 'Calm Bucha',
+                    brand: 'Bucha Brothers',
+                    price: 4,
+                    alcoholContent: 0.5,
+                    type: 'Kombucha',
+                    fill: 124
+                },
+                {
+                    name: 'Dark Soul',
+                    brand: 'West Coast Malt',
+                    price: 6,
+                    alcoholContent: 7.5,
+                    type: 'Stout',
+                    fill: 60
+                }
             ]
         };
         this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
     }
 
     handleAddNewKeg(newKeg){
-        var newMasterKegList = this.state.masterKegList.slice;
-        newMasterKegList.push(newTicket);
+        var newMasterKegList = this.state.masterKegList.slice();
+        newMasterKegList.push(newKeg);
         this.setState({masterKegList: newMasterKegList});
+        console.log(this.state.masterKegList);
     }
 
     render() {
@@ -61,7 +62,7 @@ class App extends React.Component {
             <div>
                 <Header/>
                 <Switch>
-                    <Route exact path='/' component={KegList} />
+                    <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
                     <Route path='/newKeg' render={()=><NewKegControl onAddNewKeg={this.handleAddNewKeg} />} />
                     <Route component={Error404} />
                 </Switch>

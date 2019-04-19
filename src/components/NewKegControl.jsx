@@ -8,14 +8,14 @@ class NewKegControl extends React.Component {
     }
     render(){
         return(
-            <NewKegForm />
+            <NewKegForm onAddNewKeg={this.props.onAddNewKeg}/>
         )
     }
 }
 
 
 
-NewKegForm.propTypes = {
+NewKegControl.propTypes = {
     onAddNewKeg: PropTypes.func
 }
 

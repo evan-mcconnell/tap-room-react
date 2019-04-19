@@ -11,13 +11,13 @@ function NewKegForm(props){
 
     function handleNewKegSubmission(event){
         event.preventDefault();
-        console.log(_name);
+        props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), _alcoholContent: parseInt(_alcoholContent.value), type: _type.value})
         console.log(_name.value);
-        // let _name = '';
-        // let _brand = '';
-        // let _price = '';
-        // let _alcoholContent = '';
-        // let _type = '';
+        // _name.value = '';
+        // _brand.value = '';
+        // _price.value = '';
+        // _alcoholContent.value = '';
+        // _type.value = '';
     }
 
     return (
@@ -49,7 +49,7 @@ function NewKegForm(props){
                     id="type"
                     placeholder="Drink type"
                     ref={(input) => {_type = input;}}/>
-                <button type="submit" onClick={props.onAddNewKeg}>Add New Keg</button>
+                <button type="submit">Add New Keg</button>
             </form>
             <style jsx>{`
                 .main {
@@ -90,6 +90,8 @@ function NewKegForm(props){
     );
 }
 
-
+NewKegForm.propTypes = {
+    onAddNewKeg: PropTypes.func
+}
 
 export default NewKegForm;
