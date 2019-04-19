@@ -9,20 +9,22 @@ class KegFillControl extends React.Component {
         this.state = {
             kegFill: this.props.fill
         }
+        this.handleSellPint = this.handleSellPint.bind(this);
+    }
+
+    handleSellPint(){
+        this.state.kegFill --;
+        console.log(this.state.kegFill);
     }
 
     render(){
         return (
             <div>
-                <KegFill fill={this.state.kegFill} />
+                <KegFill fill={this.state.kegFill} onSellClick={this.handleSellPint}/>
             </div>
         )
     }
-
 }
 
-// KegFillControl.prototype = {
-//     fill: PropTypes.number
-// }
 
 export default KegFillControl;

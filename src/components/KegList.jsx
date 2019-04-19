@@ -8,7 +8,7 @@ let masterKegList = [
         price: 5,
         alcoholContent: 5.5,
         type: 'IPA',
-        fill: 100
+        fill: 124
     },
     {
         name: 'Green Flash',
@@ -24,7 +24,7 @@ let masterKegList = [
         price: 4,
         alcoholContent: 0.5,
         type: 'Kombucha',
-        fill: 100
+        fill: 124
     },
     {
         name: 'Dark Soul',
@@ -32,7 +32,7 @@ let masterKegList = [
         price: 6,
         alcoholContent: 7.5,
         type: 'Stout',
-        fill: 50
+        fill: 60
     }
 ];
 

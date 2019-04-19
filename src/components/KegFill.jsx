@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function KegFill(props) {
     var fill;
-    if (props.fill > 80) {
+    if (props.fill > 90) {
         fill = 'full';
-    } else if (props.fill > 45) {
+    } else if (props.fill > 55) {
         fill = 'half';
     } else if (props.fill >= 10) {
         fill = 'dregs';
@@ -17,6 +17,7 @@ function KegFill(props) {
             <div className="kegFill">
                 <div className={fill}></div>
             </div>
+            <button onClick={props.onSellClick}>Sell a Pint</button>
             <style jsx>{`
                 .kegFill {
                     width: 30px;
@@ -58,7 +59,8 @@ function KegFill(props) {
 }
 
 KegFill.prototype = {
-    fill: PropTypes.number
+    fill: PropTypes.number,
+    onSellClick: PropTypes.func
 }
 
 export default KegFill;
