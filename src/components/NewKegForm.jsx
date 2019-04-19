@@ -11,7 +11,7 @@ function NewKegForm(props){
 
     function handleNewKegSubmission(event){
         event.preventDefault();
-        props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), _alcoholContent: parseInt(_alcoholContent.value), type: _type.value})
+        props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), alcoholContent: parseInt(_alcoholContent.value), type: _type.value, fill: 124})
         console.log(_name.value);
         // _name.value = '';
         // _brand.value = '';
@@ -80,7 +80,7 @@ function NewKegForm(props){
                     font-size: 2.6vw;
                     color: rgb(182,197,170);
                     background-color: #35454e;
-                    height: 35px;
+                    height: 50px;
                     border-radius: 10px;
                     width: 60%;
                     margin: auto;
