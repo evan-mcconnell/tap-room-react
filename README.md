@@ -19,16 +19,21 @@ _Authors_  **Kim McConnell**
 1. [Technologies Used](#technologies-used)
 1. [License](#license)
 
-### Description
+## Description
 An app that shows the state of a taproom of kegs, with features to add, remove, and edit. Built in React. 
+####  _Some Notes on Angular vs React after Week 1 React_
+The textbook difference between Angular and React is that one is a library and is a framework. In practice, that means that Angular has more _Angular-specific_ terminology and structure, and you need to understand at least a solid slice of both to get started. React has far less specifics, and although there are many "best ways" of doing things suggested by the React developers, there are always many more solutions that others have created. React lends itself well to this diversity by having a looser defenition of components themselves. While Angular compnents are a little more like what a layman might refer to as modules (I mean, they are pretty modular), React's version of components aren't tied to having a html chunk and a class chunk. They can be little units of both, sure, but they can also be more _functional_ based, and can alter and render  other components on a smaller scale than angular. 
+Data flow/binding is also quite different since React is (at least suggested) to be unidirectional in its data flow. Data is always (or usually always, because React) passed down, unlike Angular where services can take and hold data to insert whereever it needs to go. 
+I'm sure there are many more differences that I'll be discovering and exploring in the weeks to come.
 
-### Learning Objective
+
+## Learning Objective
 Use React to build out the UI (Week 1) and use state with class componets to build interactive features (Week 2)
 
-### Target Audience/Users
+## Target Audience/Users
 * The buisness selling the contents of the kegs for tracking, and the customer so that they may see what is available at any given time. 
 
-### User Stories
+## User Stories
 **As a** customer,<br>
 **I want** to easily see what drinks are avialale to me, along with ABV, price, and type<br>
 **So that** I can make the right decision for my budget.
@@ -37,15 +42,15 @@ Use React to build out the UI (Week 1) and use state with class componets to bui
 **I want** to be able to see how much is left in a keg, remove when empty, and add another full keg<br>
 **So that** I can make my buisness more efficient.
 
-### Product Requirements
+## Product Requirements
 * Display all avialable kegs
 * Display the amount left in each keg
 * Display price, ABV, type
 
-### Non-technical Requirements
+## Non-technical Requirements
 * Make it look good
 
-### Component Map
+## Component Map
 #### First Draft of Component map 
 ![Component Map First Draft](./src/assets/images/plan.jpg)
 
@@ -56,19 +61,19 @@ Specification | Input | Output
 
 
 
-### Stretch Goals (for week 1)
+## Stretch Goals (for week 1)
 * Add state to change volume left in keg and display that value
 * Edit kegs
 
-### Installation
+## Installation
 * Clone from https://github.com/kimmcconnell/tap-room-react.git
 * Run `$ npm install`
 
 
-### Known Bugs
+## Known Bugs
 * None identified yet
 
-### Technologies Used
+## Technologies Used
 * HTML
 * Webpack
 * React
