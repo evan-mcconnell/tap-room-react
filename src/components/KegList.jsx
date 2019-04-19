@@ -7,28 +7,35 @@ let masterKegList = [
         brand: 'Brew Hop',
         price: 5,
         alcoholContent: 5.5,
-        type: 'IPA'
+        type: 'IPA',
+        fill: 100
     },
     {
         name: 'Green Flash',
         brand: 'Brew Hop',
         price: 6,
         alcoholContent: 5.5,
-        type: 'IPA'
+        type: 'IPA',
+        fill: 10
+
     },
     {
         name: 'Calm Bucha',
         brand: 'Bucha Brothers',
         price: 4,
         alcoholContent: 0.5,
-        type: 'Kombucha'
+        type: 'Kombucha',
+        fill: 100
+
     },
     {
         name: 'Dark Soul',
         brand: 'West Coast Malt',
         price: 6,
         alcoholContent: 7.5,
-        type: 'Stout'
+        type: 'Stout',
+        fill: 50
+
     }
 ];
 
@@ -42,8 +49,14 @@ function KegList() {
                     price={keg.price}
                     alcoholContent={keg.alcoholContent}
                     type={keg.type}
+                    fill={keg.fill}
                     key={index} />
             )}
+            <style jsx>{`
+                hr {
+                    border-color: darkgrey;
+                }
+            `}</style>
         </div>
     );
 }

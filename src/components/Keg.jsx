@@ -4,8 +4,44 @@ import PropTypes from 'prop-types';
 function Keg(props){
     
     return (
-        <div>
-            
+        <div className="main">
+            <div className="sub-main">
+                <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
+                <div>
+                    <h2>{props.name}</h2>
+                    <h5>{props.brand}</h5>
+                </div>
+            </div>
+            <div>
+                <h3>${props.price}</h3>
+                <h5>{props.alcoholContent}%</h5>
+            </div>
+            <div className="kegFill"></div>
+            <style jsx>{`
+                .main {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 80%;
+                    max-width: 500px;
+                    margin: 30px auto 0 auto;
+                    align-items: center;
+                    color: #35454e;
+                }
+                .sub-main {
+                    display: flex;
+                    flex-direction: row;
+                }
+                h2 {
+                    margin-top: 10px;
+
+                }
+                img {
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 30px;
+                }
+            `}</style>
 
         </div>
     );
@@ -16,7 +52,8 @@ Keg.propTypes = {
     brand: PropTypes.string,
     price: PropTypes.number,
     alcoholContent: PropTypes.number,
-    type: PropTypes.string
+    type: PropTypes.string,
+    fill: PropTypes.number
 };
 
 export default Keg;

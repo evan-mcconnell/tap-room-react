@@ -21,6 +21,7 @@ function App() {
                 }
                 body {
                     font-family: Arial;
+                    background-color: #b6c5aa;
                 }
             `}</style>
         </div>
