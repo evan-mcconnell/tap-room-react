@@ -75,13 +75,13 @@ function KegFill(props) {
                 }
             `}</style>
         </div>
-    )
+    );
 }
 
-KegFill.prototype = {
+KegFill.propTypes = {
     fill: PropTypes.number,
     onSellClick: PropTypes.func,
     onSellGrowlerClick: PropTypes.func
-}
+};
 
 export default KegFill;

@@ -11,6 +11,11 @@ function NewKegForm(){
         event.preventDefault();
         console.log(_name);
         console.log(_name.value);
+        // let _name = '';
+        // let _brand = '';
+        // let _price = '';
+        // let _alcoholContent = '';
+        // let _type = '';
     }
     return (
         <div className="main">
