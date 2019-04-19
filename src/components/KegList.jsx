@@ -17,7 +17,6 @@ let masterKegList = [
         alcoholContent: 5.5,
         type: 'IPA',
         fill: 10
-
     },
     {
         name: 'Calm Bucha',
@@ -26,7 +25,6 @@ let masterKegList = [
         alcoholContent: 0.5,
         type: 'Kombucha',
         fill: 100
-
     },
     {
         name: 'Dark Soul',
@@ -35,7 +33,6 @@ let masterKegList = [
         alcoholContent: 7.5,
         type: 'Stout',
         fill: 50
-
     }
 ];
 
