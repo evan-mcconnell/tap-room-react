@@ -17,6 +17,7 @@ function NewKegForm(){
         // let _alcoholContent = '';
         // let _type = '';
     }
+
     return (
         <div className="main">
             <h2>Add a New Keg to the List</h2>
@@ -46,7 +47,7 @@ function NewKegForm(){
                     id="type"
                     placeholder="Drink type"
                     ref={(input) => {_type = input;}}/>
-                <button type="submit">Add New Keg</button>
+                <button type="submit" onClick={props.onAddNewKeg}>Add New Keg</button>
             </form>
             <style jsx>{`
                 .main {
@@ -85,6 +86,10 @@ function NewKegForm(){
             `}</style>
         </div>
     );
+}
+
+NewKegForm.propTypes = {
+    onAddNewKeg: PropTypes.func
 }
 
 export default NewKegForm;
