@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function NewKegForm(){
+
+function NewKegForm(props){
     let _name = null;
     let _brand = null;
     let _price = null;
@@ -88,8 +90,6 @@ function NewKegForm(){
     );
 }
 
-NewKegForm.propTypes = {
-    onAddNewKeg: PropTypes.func
-}
+
 
 export default NewKegForm;
