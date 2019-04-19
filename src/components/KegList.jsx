@@ -38,8 +38,9 @@ let masterKegList = [
 
 function KegList() {
     return(
-        <div>
-            <hr/>
+        <div className="main">
+            
+            <div className="list">
             {masterKegList.map((keg, index) => 
                 <Keg name={keg.name}
                     brand={keg.brand}
@@ -49,9 +50,19 @@ function KegList() {
                     fill={keg.fill}
                     key={index} />
             )}
+            </div>
             <style jsx>{`
-                hr {
-                    border-color: darkgrey;
+                .main {
+                    background-color: rgba(182,197,170,0.9);
+                    width: 80%;
+                    max-width: 1200px;
+                    margin: auto;
+                    padding-bottom: 200px;
+                }
+                .list {
+                    display: flex;
+                    flex-direction: rows;
+                    flex-wrap: wrap;
                 }
             `}</style>
         </div>

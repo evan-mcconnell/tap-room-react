@@ -4,6 +4,7 @@ import NewKegForm from './NewKegForm';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
+import taproom from '../assets/images/taproom.jpg';
 
 function App() {
     return (
@@ -21,7 +22,7 @@ function App() {
                 }
                 body {
                     font-family: Arial;
-                    background-color: #b6c5aa;
+                    background-image: url(${taproom});
                 }
             `}</style>
         </div>

@@ -19,7 +19,7 @@ function Keg(props){
                 <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
                 <div>
                     <h2>{props.name}</h2>
-                    <h5>{props.brand}</h5>
+                    <h4>{props.brand}</h4>
                 </div>
             </div>
             <div>
@@ -37,6 +37,7 @@ function Keg(props){
                     width: 80%;
                     max-width: 500px;
                     margin: 30px auto 0 auto;
+                    padding: 0 20px;
                     align-items: center;
                     color: #35454e;
                 }
@@ -57,11 +58,12 @@ function Keg(props){
                     border-radius: 20px;
                 }
                 .kegFill {
-                    width: 40px;
+                    width: 30px;
                     height: 70px;
                     border: 2px solid #35454e;
-                    border-radius: 4px;
+                    border-radius: 5px;
                     position: relative;
+                    background-color: #dae8ce;
                 }
                 .full {
                     width: 100%;
