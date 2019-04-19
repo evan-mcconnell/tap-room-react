@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import KegFill from './KegFill';
+import KegFillControl from './KegFillControl';
 
 function Keg(props){
     return (
@@ -16,7 +16,7 @@ function Keg(props){
                 <h3>${props.price}</h3>
                 <h5>{props.alcoholContent}%</h5>
             </div>
-            <KegFill fill={props.fill}/>
+            <KegFillControl fill={props.fill}/>
             <style jsx>{`
                 .main {
                     display: flex;
