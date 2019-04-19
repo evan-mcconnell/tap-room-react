@@ -14,6 +14,15 @@ function App() {
                 <Route path='/newKeg' component={NewKegForm} />
                 <Route component={Error404} />
             </Switch>
+            <style jsx global>{`
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
+                body {
+                    font-family: Arial;
+                }
+            `}</style>
         </div>
     );
 }
