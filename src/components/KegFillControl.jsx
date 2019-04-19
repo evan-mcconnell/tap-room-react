@@ -10,17 +10,24 @@ class KegFillControl extends React.Component {
             kegFill: this.props.fill
         }
         this.handleSellPint = this.handleSellPint.bind(this);
+        this.handleSellGrowler = this.handleSellGrowler.bind(this);
     }
 
     handleSellPint(){
         this.state.kegFill --;
         console.log(this.state.kegFill);
     }
+    handleSellGrowler(){
+        this.state.kegFill -= 32;
+        console.log(this.state.kegFill);
+    }
 
     render(){
         return (
             <div>
-                <KegFill fill={this.state.kegFill} onSellClick={this.handleSellPint}/>
+                <KegFill fill={this.state.kegFill} 
+                        onSellClick={this.handleSellPint}
+                        onSellGrowlerClick={this.handleSellGrowler}/>
             </div>
         )
     }

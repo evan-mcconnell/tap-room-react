@@ -7,10 +7,12 @@ function Keg(props){
         <div className="main">
             <div className="sub-main">
                 <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
+                
                 <div>
                     <h2>{props.name}</h2>
                     <h4>{props.brand}</h4>
                 </div>
+
             </div>
             <div>
                 <h3>${props.price}</h3>
@@ -28,6 +30,7 @@ function Keg(props){
                     padding: 0 20px;
                     align-items: center;
                     color: #35454e;
+                    border-bottom: 1px solid #35454e;
                 }
                 .sub-main {
                     display: flex;
@@ -44,9 +47,9 @@ function Keg(props){
                     opacity: 0.8;
                     border: 2px solid #35454e;
                     border-radius: 20px;
+                    margin-bottom: 10px;
                 }
             `}</style>
-
         </div>
     );
 }
