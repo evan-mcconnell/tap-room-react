@@ -1,5 +1,4 @@
 import React from 'react';
-import coffee from '../assets/images/coffee.jpg';
 
 function NewKegForm(){
     return (
@@ -11,7 +10,6 @@ function NewKegForm(){
                     placeholder='Keg Name'/>
                 <button type='submit'>Make a new Keg</button>
             </form>
-            <img src={coffee} alt="have you had coffee?"/>
         </div>
     );
 }
