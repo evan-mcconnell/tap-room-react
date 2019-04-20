@@ -61,9 +61,15 @@ Specification | Input | Output
 
 
 
-## Stretch Goals (for week 1)
-* Add state to change volume left in keg and display that value
-* Edit kegs
+## Stretch Goals
+#### For Week 1 // Next Steps
+* Fuctionality to remove kegs
+* Fuctionality to Edit kegs
+* Show Preview of new Keg while creating it
+* Error handing when not filling out all parts of form
+* Admin user that had access to edit and create
+* Deploy on Firebase
+* Hook up to actually database
 
 ## Installation
 * Clone from https://github.com/kimmcconnell/tap-room-react.git

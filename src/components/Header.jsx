@@ -10,7 +10,7 @@ function Header(){
     return(
         <div>
             <h1>Reactive Tap Room</h1>
-            <a><Link style={linkStyle} to="/">Tap Room</Link></a> | <a><Link style={linkStyle} to="/newkeg">Create Keg</Link></a><hr/>
+            <Link style={linkStyle} to="/">Tap Room</Link> | <Link style={linkStyle} to="/newkeg">Create Keg</Link><hr/>
             
             <style jsx>{`
                 div {
