@@ -14,16 +14,20 @@ class KegFillControl extends React.Component {
     }
 
     handleSellPint(){
-        var fill = this.state.kegFill - 1;
-        this.setState({kegFill: fill});
+        if (this.state.kegFill >= 2) {
+            var fill = this.state.kegFill - 1;
+            this.setState({kegFill: fill});
+        } else {
+            alert('This keg is empty!');
+        }
         console.log(this.state.kegFill);
     }
     handleSellGrowler(){
-        if (this.state.kegFill >= 32) {
-            var fill = this.state.kegFill - 32;
+        if (this.state.kegFill >= 2) {
+            var fill = this.state.kegFill - 2;
             this.setState({kegFill: fill});
         } else {
-            alert('You can\'t do that');
+            alert('This keg is empty or near-empty!');
         }
         console.log(this.state.kegFill);
     }
