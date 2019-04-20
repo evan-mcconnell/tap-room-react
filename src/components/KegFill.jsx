@@ -2,27 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function KegFill(props) {
-    var fill;
-    if (props.fill > 90) {
-        fill = 'full';
-    } else if (props.fill > 55) {
-        fill = 'half';
-    } else if (props.fill >= 10) {
-        fill = 'dregs';
-    } else {
-        fill = 'empty';
-    }
-    return(
-        <div className="main">
-            <div className="kegFill">
-                <div className={fill}></div>
-            </div>
-            <div className="buttons">
-                <button onClick={props.onSellClick}>Sell Pint</button>
-                <br/>
-                <button onClick={props.onSellGrowlerClick}>Sell a Growler</button>
-            </div>
-            <style jsx>{`
+  var fill;
+  if (props.fill > 90) {
+    fill = 'full';
+  } else if (props.fill > 55) {
+    fill = 'half';
+  } else if (props.fill >= 10) {
+    fill = 'dregs';
+  } else {
+    fill = 'empty';
+  }
+  return(
+    <div className="main">
+      <div className="kegFill">
+        <div className={fill}></div>
+      </div>
+      <div className="buttons">
+        <button onClick={props.onSellClick}>Sell Pint</button>
+        <br/>
+        <button onClick={props.onSellGrowlerClick}>Sell a Growler</button>
+      </div>
+      <style jsx>{`
                 .main {
                     display: flex;
                     flex-direction: row;
@@ -74,14 +74,14 @@ function KegFill(props) {
                     bottom: 0;
                 }
             `}</style>
-        </div>
-    );
+    </div>
+  );
 }
 
 KegFill.propTypes = {
-    fill: PropTypes.number,
-    onSellClick: PropTypes.func,
-    onSellGrowlerClick: PropTypes.func
+  fill: PropTypes.number,
+  onSellClick: PropTypes.func,
+  onSellGrowlerClick: PropTypes.func
 };
 
 export default KegFill;

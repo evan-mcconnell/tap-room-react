@@ -3,23 +3,23 @@ import PropTypes from 'prop-types';
 import KegFillControl from './KegFillControl';
 
 function Keg(props){
-    return (
-        <div className="main">
-            <div className="sub-main">
-                <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
+  return (
+    <div className="main">
+      <div className="sub-main">
+        <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
                 
-                <div>
-                    <h2>{props.name}</h2>
-                    <h4>{props.brand}</h4>
-                </div>
+        <div>
+          <h2>{props.name}</h2>
+          <h4>{props.brand}</h4>
+        </div>
 
-            </div>
-            <div>
-                <h3>${props.price}</h3>
-                <h5>{props.alcoholContent}%</h5>
-            </div>
-            <KegFillControl fill={props.fill}/>
-            <style jsx>{`
+      </div>
+      <div>
+        <h3>${props.price}</h3>
+        <h5>{props.alcoholContent}%</h5>
+      </div>
+      <KegFillControl fill={props.fill}/>
+      <style jsx>{`
                 .main {
                     display: flex;
                     flex-direction: row;
@@ -50,17 +50,17 @@ function Keg(props){
                     margin-bottom: 10px;
                 }
             `}</style>
-        </div>
-    );
+    </div>
+  );
 }
 
 Keg.propTypes = {
-    name: PropTypes.string,
-    brand: PropTypes.string,
-    price: PropTypes.number,
-    alcoholContent: PropTypes.number,
-    type: PropTypes.string,
-    fill: PropTypes.number
+  name: PropTypes.string,
+  brand: PropTypes.string,
+  price: PropTypes.number,
+  alcoholContent: PropTypes.number,
+  type: PropTypes.string,
+  fill: PropTypes.number
 };
 
 export default Keg;

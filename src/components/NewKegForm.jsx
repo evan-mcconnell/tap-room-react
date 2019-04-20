@@ -3,55 +3,55 @@ import PropTypes from 'prop-types';
 
 
 function NewKegForm(props){
-    let _name = null;
-    let _brand = null;
-    let _price = null;
-    let _alcoholContent = null;
-    let _type = null;
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _alcoholContent = null;
+  let _type = null;
 
-    function handleNewKegSubmission(event){
-        event.preventDefault();
-        props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), alcoholContent: parseInt(_alcoholContent.value), type: _type.value, fill: 124})
-        console.log(_name.value);
-        // _name.value = '';
-        // _brand.value = '';
-        // _price.value = '';
-        // _alcoholContent.value = '';
-        // _type.value = '';
-    }
+  function handleNewKegSubmission(event){
+    event.preventDefault();
+    props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), alcoholContent: parseInt(_alcoholContent.value), type: _type.value, fill: 124});
+    console.log(_name.value);
+    // _name.value = '';
+    // _brand.value = '';
+    // _price.value = '';
+    // _alcoholContent.value = '';
+    // _type.value = '';
+  }
 
-    return (
-        <div className="main">
-            <h2>Add a New Keg to the List</h2>
-            <form onSubmit={handleNewKegSubmission}>
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Drink name"
-                    ref={(input) => {_name = input;}}/>
-                <input
-                    type="text"
-                    id="brand"
-                    placeholder="Brewery/Brand"
-                    ref={(input) => {_brand = input;}}/>
-                <input
-                    type="number"
-                    id="price"
-                    placeholder="Drink price"
-                    ref={(input) => {_price = input;}}/>
-                <input
-                    type="text"
-                    id="alcoholContent"
-                    placeholder="ABV"
-                    ref={(input) => {_alcoholContent = input;}}/>
-                <input
-                    type="text"
-                    id="type"
-                    placeholder="Drink type"
-                    ref={(input) => {_type = input;}}/>
-                <button type="submit">Add New Keg</button>
-            </form>
-            <style jsx>{`
+  return (
+    <div className="main">
+      <h2>Add a New Keg to the List</h2>
+      <form onSubmit={handleNewKegSubmission}>
+        <input
+          type="text"
+          id="name"
+          placeholder="Drink name"
+          ref={(input) => {_name = input;}}/>
+        <input
+          type="text"
+          id="brand"
+          placeholder="Brewery/Brand"
+          ref={(input) => {_brand = input;}}/>
+        <input
+          type="number"
+          id="price"
+          placeholder="Drink price"
+          ref={(input) => {_price = input;}}/>
+        <input
+          type="text"
+          id="alcoholContent"
+          placeholder="ABV"
+          ref={(input) => {_alcoholContent = input;}}/>
+        <input
+          type="text"
+          id="type"
+          placeholder="Drink type"
+          ref={(input) => {_type = input;}}/>
+        <button type="submit">Add New Keg</button>
+      </form>
+      <style jsx>{`
                 .main {
                     background-color: rgba(182,197,170,0.9);
                     width: 80%;
@@ -86,12 +86,12 @@ function NewKegForm(props){
                     margin: auto;
                 }
             `}</style>
-        </div>
-    );
+    </div>
+  );
 }
 
 NewKegForm.propTypes = {
-    onAddNewKeg: PropTypes.func
-}
+  onAddNewKeg: PropTypes.func
+};
 
 export default NewKegForm;

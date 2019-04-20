@@ -4,21 +4,21 @@ import Keg from './Keg';
 
 
 function KegList(props) {
-    return(
-        <div className="main">
+  return(
+    <div className="main">
             
-            <div className="list">
-                {props.kegList.map((keg, index) => 
-                    <Keg name={keg.name}
-                        brand={keg.brand}
-                        price={keg.price}
-                        alcoholContent={keg.alcoholContent}
-                        type={keg.type}
-                        fill={keg.fill}
-                        key={index} />
-                )}
-            </div>
-            <style jsx>{`
+      <div className="list">
+        {props.kegList.map((keg, index) => 
+          <Keg name={keg.name}
+            brand={keg.brand}
+            price={keg.price}
+            alcoholContent={keg.alcoholContent}
+            type={keg.type}
+            fill={keg.fill}
+            key={index} />
+        )}
+      </div>
+      <style jsx>{`
                 .main {
                     background-color: rgba(182,197,170,0.9);
                     width: 80%;
@@ -32,12 +32,12 @@ function KegList(props) {
                     flex-wrap: wrap;
                 }
             `}</style>
-        </div>
-    );
+    </div>
+  );
 }
 
 KegList.propTypes = {
-    kegList: PropTypes.array
-}
+  kegList: PropTypes.array
+};
 
 export default KegList;
