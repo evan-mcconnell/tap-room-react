@@ -12,6 +12,7 @@
   "author": "Kimberly McConnell",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
