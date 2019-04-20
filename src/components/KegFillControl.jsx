@@ -14,7 +14,7 @@ class KegFillControl extends React.Component {
   }
 
   handleSellPint(){
-    if (this.state.kegFill = 0) {
+    if (this.state.kegFill > 0) {
       var fill = this.state.kegFill - 1;
       this.setState({kegFill: fill});
     } else {
