@@ -74,7 +74,8 @@ class App extends React.Component {
       brand: newKeg.brand,
       price: newKeg.price,
       alcoholContent: newKeg.alcoholContent,
-      type: newKeg.type
+      type: newKeg.type,
+      fill: 124
     })
     .then(function (response) {
       console.log(response);
