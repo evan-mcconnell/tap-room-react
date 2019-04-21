@@ -8,10 +8,10 @@ class NewKegControl extends React.Component {
     super(props);
   }
   
-  async sayHello() {
+  async getData() {
     try {
-      const response = await axios.get('http://localhost:3000/');
-      console.log(response);
+      const response = await axios.get('http://localhost:3000/keg');
+      console.log(response.data);
     } catch(error) {
       console.error(error);
     }
