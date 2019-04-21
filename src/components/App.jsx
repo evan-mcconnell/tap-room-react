@@ -65,6 +65,26 @@ class App extends React.Component {
     }
   }
 
+  postNewKeg(newKeg) {
+    console.log(newKeg);
+    console.log(newKeg.name);
+    console.log(newKeg.type);
+    axios.post('http://localhost:3000/keg', {
+      name: newKeg.name,
+      brand: newKeg.brand,
+      price: newKeg.price,
+      alcoholContent: newKeg.alcoholContent,
+      type: newKeg.type
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
+
 
   handleAddNewKeg(newKeg){
     var newMasterKegList = this.state.masterKegList.slice();
@@ -83,7 +103,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
-          <Route path='/newKeg' render={()=><NewKegControl onAddNewKeg={this.handleAddNewKeg} />} />
+          <Route path='/newKeg' render={()=><NewKegControl onAddNewKeg={this.postNewKeg} />} />
           <Route component={Error404} />
         </Switch>
         <Footer/>

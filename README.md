@@ -1,9 +1,9 @@
-# Tap Room in React
+# Tap Room in React with API using MySQL
 
-#### React Tap Room project for Epicodus
+#### React Tap Room branch for MySQL experimentation
 
-_Published_ **April 19 2019**<br>
-_Authors_  **Kim McConnell**
+_Published_ **April 20 2019**<br>
+_Author_  **Kimberly McConnell**
 
 1. [Description](#description)
 1. [Learning Objective](#learning-objective)
@@ -20,18 +20,13 @@ _Authors_  **Kim McConnell**
 1. [License](#license)
 
 ## Description
-An app that shows the state of a taproom of kegs, with features to add, remove, and edit. Built in React. 
-####  _Some Notes on Angular vs React after Week 1 React_
-The textbook difference between Angular and React is that one is a library and is a framework. In practice, that means that Angular has more _Angular-specific_ terminology and structure, and you need to understand at least a solid slice of both to get started. React has far less specifics, and although there are many "best ways" of doing things suggested by the React developers, there are always many more solutions that others have created. React lends itself well to this diversity by having a looser defenition of components themselves. While Angular compnents are a little more like what a layman might refer to as modules (I mean, they are pretty modular), React's version of components aren't tied to having a html chunk and a class chunk. They can be little units of both, sure, but they can also be more _functional_ based, and can alter and render  other components on a smaller scale than angular. 
-Data flow/binding is also quite different since React is (at least suggested) to be unidirectional in its data flow. Data is always (or usually always, because React) passed down, unlike Angular where services can take and hold data to insert whereever it needs to go. 
-I'm sure there are many more differences that I'll be discovering and exploring in the weeks to come.
-
+An app that shows the state of a taproom of kegs, with features to add, remove, and edit. Built in React, Express, Knex, and MySQL 
 
 ## Learning Objective
-Use React to build out the UI (Week 1) and use state with class componets to build interactive features (Week 2)
+Learn how to use a locally-hosted SQL database to implement full CRUD
 
 ## Target Audience/Users
-* The buisness selling the contents of the kegs for tracking, and the customer so that they may see what is available at any given time. 
+* The buisness selling the contents of the kegs for tracking, and the customer so that they may see what is available at any given time.
 
 ## User Stories
 **As a** customer,<br>
@@ -99,6 +94,10 @@ _I knew the click was working because of my console logs, but the kegfill compon
 * Webpack w/ Babel, Hot Module Replacement
 * jsx 
 * CSS
+* Express
+* Knex
+* Mysql
+* Axios
 
 ### License
 [MIT](./LICENSE.txt)
