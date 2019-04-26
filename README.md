@@ -2,7 +2,7 @@
 
 #### React Tap Room project for Epicodus
 
-_Published_ **April 19 2019**<br>
+_Published_ **April 26 2019**<br>
 _Authors_  **Kim McConnell**
 
 1. [Description](#description)
@@ -57,11 +57,11 @@ Use React to build out the UI (Week 1) and use state with class componets to bui
 <img src="./src/assets/images/plan.jpg" alt="Component Map First Draft" width="500px" height="300px">
 
 ### Development Specs
-Specification | Input | Output
-------------- | ----- | ------
- |  | 
-
-
+* Able to click to sell pints or growlers (4 pints each) and see keg volume decrease
+* Fuctionality to add new kegs
+* Fuctionality to remove kegs
+* Fuctionality to Edit kegs (sort of)
+* Admin user that had access to edit and create
 
 ## Stretch Goals
 #### For Week 1 // Next Steps
