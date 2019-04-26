@@ -8,9 +8,14 @@ function AdminButtons(props) {
     props.onDeleteKeg();
   }
 
+  async function handleEditClick() {
+    await props.onKegSelection(props.id);
+    props.onShowEditForm();
+  }
+
   return(
     <div className="buttons">
-      <button onClick={handleDeleteClick}>EDIT</button><br/>
+      <button onClick={handleEditClick}>EDIT</button><br/>
       <button onClick={handleDeleteClick}>DELETE</button>
       <style jsx>{`
         .buttons {

@@ -49,11 +49,14 @@ class App extends React.Component {
           id: 'keg4'
         }
       },
-      selectedKeg: null
+      selectedKeg: null,
+      showEditForm: true
+
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
     // this.handleEditKeg = this.handleEditKeg.bind(this);
+    this.handleShowEditForm = this.handleShowEditForm.bind(this);
     this.handleKegSelection = this.handleKegSelection.bind(this);
     this.handleSellPint = this.handleSellPint.bind(this);
     this.handleSellGrowler = this.handleSellGrowler.bind(this);
@@ -77,11 +80,20 @@ class App extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
 
-  // handleEditKeg() {
-  //   var newMasterKegList = Object.assign({}, this.state.masterKegList);
-  //   delete newMasterKegList[this.state.selectedKeg];
-  //   this.setState({masterKegList: newMasterKegList});
-  // }
+  handleShowEditForm() {
+    this.setState(prevState => ({
+      showEditForm: !prevState.showEditForm
+    }));
+    console.log(this.state.showEditForm)
+  }
+
+  handleEditKeg() {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    this.setState({masterKegList: newMasterKegList});
+
+  }
+
+
 
   handleSellPint(){
     if (this.state.masterKegList[this.state.selectedKeg].fill > 0) {
@@ -120,7 +132,9 @@ class App extends React.Component {
             onAddNewKeg={this.handleAddNewKeg} 
             onKegSelection={this.handleKegSelection}
             routerPath={props.location.pathname} 
-            onDeleteKeg={this.handleDeleteKeg} />} />
+            onDeleteKeg={this.handleDeleteKeg}
+            onEditKeg={this.handleEditKeg} 
+            onShowEditForm = {this.handleShowEditForm}/>} />
           <Route component={Error404} />
         </Switch>
         <Footer/>

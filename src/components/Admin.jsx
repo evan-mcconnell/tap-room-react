@@ -23,6 +23,7 @@ function Admin(props) {
             onKegSelection={props.onKegSelection}
             onDeleteKeg={props.onDeleteKeg}
             onEditKeg={props.onEditKeg}
+            onShowEditForm={props.onShowEditForm}
           />;
         }
         )}
@@ -48,6 +49,7 @@ Admin.propTypes = {
   kegList: PropTypes.object,
   onKegSelection: PropTypes.func,
   onDeleteKeg: PropTypes.func,
+  onEditeKeg: PropTypes.func,
   onAddNewKeg: PropTypes.func,
   routerPath: PropTypes.string
 };

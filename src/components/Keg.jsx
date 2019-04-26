@@ -11,6 +11,7 @@ function Keg(props){
     buttons = <AdminButtons onKegSelection={props.onKegSelection}
       onDeleteKeg={props.onDeleteKeg}
       onEditKeg={props.onEditKeg}
+      onShowEditForm={props.onShowEditForm}
       id={props.id} />;
   } 
 
