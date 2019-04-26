@@ -10,10 +10,32 @@ function AdminButtons(props) {
 
   return(
     <div className="buttons">
-    <button onClick={handleDeleteClick}>EDIT</button>
-    <button onClick={handleDeleteClick}>DELETE</button>
-  </div>
+      <button onClick={handleDeleteClick}>EDIT</button><br/>
+      <button onClick={handleDeleteClick}>DELETE</button>
+      <style jsx>{`
+        .buttons {
+          padding: 5px;
+      }
+      button {
+          font-size: 14px;
+          font-weight: bold;
+          background-color: indianred;
+          color: darkred;
+          border: 1px solid darkred;
+          border-radius: 5px;
+          width: 65px;
+          height: 35px;
+          margin: 2px;
+      }
+      `}</style>
+    </div>
   )
+}
+
+AdminButtons.propTypes = {
+  id: PropTypes.string,
+  handleDeleteClick: PropTypes.func,
+  handleEditClick: PropTypes.func
 }
 
 export default AdminButtons;

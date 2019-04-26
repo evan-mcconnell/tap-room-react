@@ -33,6 +33,7 @@ function Keg(props){
       
       <KegFill fill={props.fill}
         id={props.id}
+        routerPath={props.routerPath}
         onKegSelection={props.onKegSelection}
         onSellPint={props.onSellPint}
         onSellGrowler={props.onSellGrowler} />
@@ -81,6 +82,7 @@ Keg.propTypes = {
   alcoholContent: PropTypes.number,
   type: PropTypes.string,
   fill: PropTypes.number,
+  id: PropTypes.string,
   onSellPint: PropTypes.func,
   onSellGrowler: PropTypes.func,
   onDeleteKeg: PropTypes.func,

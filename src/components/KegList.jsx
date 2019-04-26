@@ -18,6 +18,7 @@ function KegList(props) {
             fill={keg.fill}
             id={keg.id} 
             key={keg.id} 
+            routerPath={props.routerPath}
             onKegSelection={props.onKegSelection}
             onSellPint={props.onSellPint}
             onSellGrowler={props.onSellGrowler} 

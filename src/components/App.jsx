@@ -110,7 +110,8 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}
+          <Route exact path='/' render={(props)=><KegList kegList={this.state.masterKegList}
+            routerPath={props.location.pathname}
             onKegSelection={this.handleKegSelection} 
             onSellPint={this.handleSellPint} 
             onSellGrowler={this.handleSellGrowler} 

@@ -23,7 +23,7 @@ function Admin(props) {
             onKegSelection={props.onKegSelection}
             onDeleteKeg={props.onDeleteKeg}
             onEditKeg={props.onEditKeg}
-            onSellGrowler={props.onSellGrowler} />;
+          />;
         }
         )}
       </div>
@@ -48,6 +48,7 @@ Admin.propTypes = {
   kegList: PropTypes.object,
   onKegSelection: PropTypes.func,
   onDeleteKeg: PropTypes.func,
+  onAddNewKeg: PropTypes.func,
   routerPath: PropTypes.string
 };
 
