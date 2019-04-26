@@ -53,8 +53,8 @@ Use React to build out the UI (Week 1) and use state with class componets to bui
 ## Component Map
 #### First Draft of Component map 
 
-![Component Map Second Draft](./src/assets/images/plan.jpg)
-![Component Map First Draft](./src/assets/images/plan2.png)
+![Component Map Second Draft](./src/assets/images/plan2.png)
+<img src="./src/assets/images/plan.jpg" alt="Component Map First Draft" width="500px" height="300px">
 
 ### Development Specs
 Specification | Input | Output

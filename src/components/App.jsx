@@ -1,7 +1,7 @@
 import React from 'react';
 import KegList from './KegList';
 import PropTypes from 'prop-types';
-import NewKegControl from './NewKegControl';
+import Admin from './Admin';
 import Header from './Header';
 import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
@@ -12,8 +12,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: [
-        {
+      masterKegList: {
+        keg1: {
           name: 'Hoppathon',
           brand: 'Brew Hop',
           price: 5,
@@ -21,7 +21,7 @@ class App extends React.Component {
           type: 'IPA',
           fill: 124
         },
-        {
+        keg2: {
           name: 'Green Flash',
           brand: 'Brew Hop',
           price: 6,
@@ -29,7 +29,7 @@ class App extends React.Component {
           type: 'IPA',
           fill: 10
         },
-        {
+        keg2: {
           name: 'Calm Bucha',
           brand: 'Bucha Brothers',
           price: 4,
@@ -37,7 +37,7 @@ class App extends React.Component {
           type: 'Kombucha',
           fill: 124
         },
-        {
+        keg2: {
           name: 'Dark Soul',
           brand: 'West Coast Malt',
           price: 6,
@@ -45,7 +45,7 @@ class App extends React.Component {
           type: 'Stout',
           fill: 60
         }
-      ]
+      }
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
   }
@@ -57,13 +57,32 @@ class App extends React.Component {
     console.log(this.state.masterKegList);
   }
 
+  handleSellPint(){
+    if (this.state.kegFill > 0) {
+      var fill = this.state.kegFill - 1;
+      this.setState({kegFill: fill});
+    } else {
+      alert('This keg is empty!');
+    }
+    console.log(this.state.kegFill);
+  }
+  handleSellGrowler(){
+    if (this.state.kegFill > 4) {
+      var fill = this.state.kegFill - 4;
+      this.setState({kegFill: fill});
+    } else {
+      alert('This keg is empty or near-empty!');
+    }
+    console.log(this.state.kegFill);
+  }
+
   render() {
     return (
       <div>
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
-          <Route path='/newKeg' render={()=><NewKegControl onAddNewKeg={this.handleAddNewKeg} />} />
+          <Route path='/newKeg' render={()=><Admin onAddNewKeg={this.handleAddNewKeg} />} />
           <Route component={Error404} />
         </Switch>
         <Footer/>
