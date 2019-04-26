@@ -53,7 +53,7 @@ class App extends React.Component {
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
-    this.handleEditKeg = this.handleEditKeg.bind(this);
+    // this.handleEditKeg = this.handleEditKeg.bind(this);
     this.handleKegSelection = this.handleKegSelection.bind(this);
     this.handleSellPint = this.handleSellPint.bind(this);
     this.handleSellGrowler = this.handleSellGrowler.bind(this);
@@ -71,17 +71,17 @@ class App extends React.Component {
     console.log(this.state.masterKegList);
   }
 
-  handleDeleteKeg(keg) {
-    var newMasterKegList = Object.assign({}, this.state.masterKegList);
-    delete newMasterKegList[keg];
-    this.setState({masterKegList: newMasterKegList});
-  }
-
-  handleEditKeg() {
+  handleDeleteKeg() {
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
     delete newMasterKegList[this.state.selectedKeg];
     this.setState({masterKegList: newMasterKegList});
   }
+
+  // handleEditKeg() {
+  //   var newMasterKegList = Object.assign({}, this.state.masterKegList);
+  //   delete newMasterKegList[this.state.selectedKeg];
+  //   this.setState({masterKegList: newMasterKegList});
+  // }
 
   handleSellPint(){
     if (this.state.masterKegList[this.state.selectedKeg].fill > 0) {

@@ -4,6 +4,11 @@ import KegFill from './KegFill';
 
 function Keg(props){
   
+  async function handleDeleteClick() {
+    await props.onKegSelection(props.id);
+    props.onDeleteKeg();
+  } 
+
   return (
     <div className="main">
       <div className="sub-main">
@@ -19,7 +24,7 @@ function Keg(props){
         <h3>${props.price}</h3>
         <h5>{props.alcoholContent}%</h5>
       </div>
-      <button onClick={props.onDeleteKeg(props.id)}>DELETE</button>
+      <button onClick={handleDeleteClick}>DELETE</button>
       
       <KegFill fill={props.fill}
         id={props.id}
