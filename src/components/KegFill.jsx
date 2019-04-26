@@ -37,12 +37,13 @@ function KegFill(props) {
                 }
                 
                 .kegFill {
-                    width: 30px;
+                    width: 25px;
                     height: 70px;
                     border: 2px solid #35454e;
                     border-radius: 5px;
                     position: relative;
                     background-color: #dae8ce;
+                    margin: 2px;
                 }
                 .fill {
                     width: 100%;

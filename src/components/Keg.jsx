@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import KegFill from './KegFill';
 import AdminButtons from './AdminButtons';
+import EditForm from './EditForm';
 
 function Keg(props){
   
   let buttons;
+  let form;
   
   if (props.routerPath === '/admin'){
     buttons = <AdminButtons onKegSelection={props.onKegSelection}
@@ -15,32 +17,38 @@ function Keg(props){
       id={props.id} />;
   } 
 
+  if (props.routerPath === '/admin' && (props.editForm)) {
+    form = <EditForm />;
+  } 
+
 
   return (
-    <div className="main">
-      <div className="sub-main">
-        <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
-                
-        <div>
-          <h2>{props.name}</h2>
-          <h4>{props.brand}</h4>
+    <div className="container">
+      <div className="main">
+        <div className="main-info">
+          <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
+                  
+          <div>
+            <h2>{props.name}</h2>
+            <h4>{props.brand}</h4>
+          </div>
+
         </div>
+        <div>
+          <h3>${props.price}</h3>
+          <h5>{props.alcoholContent}%</h5>
+        </div>
+        
+        <KegFill fill={props.fill}
+          id={props.id}
+          routerPath={props.routerPath}
+          onKegSelection={props.onKegSelection}
+          onSellPint={props.onSellPint}
+          onSellGrowler={props.onSellGrowler} />
 
+        {buttons}
       </div>
-      <div>
-        <h3>${props.price}</h3>
-        <h5>{props.alcoholContent}%</h5>
-      </div>
-      
-      <KegFill fill={props.fill}
-        id={props.id}
-        routerPath={props.routerPath}
-        onKegSelection={props.onKegSelection}
-        onSellPint={props.onSellPint}
-        onSellGrowler={props.onSellGrowler} />
-
-      {buttons}
-      
+      {form}
       <style jsx>{`
                 .main {
                     display: flex;
@@ -54,13 +62,12 @@ function Keg(props){
                     color: #35454e;
                     border-bottom: 1px solid #35454e;
                 }
-                .sub-main {
+                .main-info {
                     display: flex;
                     flex-direction: row;
                 }
                 h2 {
                     margin-top: 10px;
-
                 }
                 img {
                     width: 80px;

@@ -84,7 +84,7 @@ class App extends React.Component {
     this.setState(prevState => ({
       showEditForm: !prevState.showEditForm
     }));
-    console.log(this.state.showEditForm)
+    console.log(this.state.showEditForm);
   }
 
   handleEditKeg() {
@@ -134,7 +134,9 @@ class App extends React.Component {
             routerPath={props.location.pathname} 
             onDeleteKeg={this.handleDeleteKeg}
             onEditKeg={this.handleEditKeg} 
-            onShowEditForm = {this.handleShowEditForm}/>} />
+            onShowEditForm = {this.handleShowEditForm}
+            editForm = {this.state.showEditForm}
+          />} />
           <Route component={Error404} />
         </Switch>
         <Footer/>

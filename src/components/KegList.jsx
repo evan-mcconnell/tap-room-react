@@ -4,6 +4,7 @@ import Keg from './Keg';
 
 
 function KegList(props) {
+  
   return(
     <div className="main">
       
@@ -24,7 +25,8 @@ function KegList(props) {
             onSellGrowler={props.onSellGrowler} 
             onDeleteKeg={props.onDeleteKeg}
             onEditKeg={props.onEditKeg}
-            onShowEditForm={props.onShowEditForm} />;
+            onShowEditForm={props.onShowEditForm} 
+            editForm = {props.editForm} />;
         }
         )}
       </div>
@@ -38,6 +40,7 @@ function KegList(props) {
                 }
                 .list {
                     display: flex;
+                    justify-content: space-around;
                     flex-direction: rows;
                     flex-wrap: wrap;
                 }
