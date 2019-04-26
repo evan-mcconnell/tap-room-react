@@ -51,7 +51,6 @@ class App extends React.Component {
       },
       selectedKeg: null,
       showEditForm: true
-
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);

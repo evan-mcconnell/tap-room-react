@@ -39,8 +39,8 @@ function AdminButtons(props) {
 
 AdminButtons.propTypes = {
   id: PropTypes.string,
-  handleDeleteClick: PropTypes.func,
-  handleEditClick: PropTypes.func
+  onDeleteKeg: PropTypes.func,
+  onShowEditForm: PropTypes.func
 }
 
 export default AdminButtons;

@@ -9,16 +9,23 @@ function Keg(props){
   let buttons;
   let form;
   
+  
   if (props.routerPath === '/admin'){
     buttons = <AdminButtons onKegSelection={props.onKegSelection}
       onDeleteKeg={props.onDeleteKeg}
-      onEditKeg={props.onEditKeg}
       onShowEditForm={props.onShowEditForm}
       id={props.id} />;
   } 
 
   if (props.routerPath === '/admin' && (props.editForm)) {
-    form = <EditForm />;
+    form = <EditForm name={props.name}
+      brand={props.brand}
+      price={props.price}
+      alcoholContent={props.alcoholContent}
+      type={props.type}
+      fill={props.fill}
+      id={props.id} 
+      onEditKeg={props.onEditKeg}/>;
   } 
 
 
