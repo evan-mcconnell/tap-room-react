@@ -17,9 +17,10 @@ function KegList(props) {
             type={keg.type}
             fill={keg.fill}
             id={keg.id} 
+            key={keg.id} 
             onKegSelection={props.onKegSelection}
             onSellPint={props.onSellPint}
-            onSellGrowler={props.onSellGrowler} />
+            onSellGrowler={props.onSellGrowler} />;
         }
         )}
       </div>

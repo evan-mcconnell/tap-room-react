@@ -10,7 +10,7 @@ function Header(){
   return(
     <div>
       <h1>Reactive Tap Room</h1>
-      <Link style={linkStyle} to="/">Tap Room</Link> | <Link style={linkStyle} to="/newkeg">Create Keg</Link><hr/>
+      <Link style={linkStyle} to="/">Tap Room</Link> | <Link style={linkStyle} to="/admin">Admin Page</Link><hr/>
       <style jsx>{`
         div {
             background-color: #35454e;

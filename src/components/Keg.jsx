@@ -19,10 +19,10 @@ function Keg(props){
         <h5>{props.alcoholContent}%</h5>
       </div>
       <KegFill fill={props.fill}
-              id={props.id}
-              onKegSelection={props.onKegSelection}
-              onSellPint={props.onSellPint}
-              onSellGrowler={props.onSellGrowler} />
+        id={props.id}
+        onKegSelection={props.onKegSelection}
+        onSellPint={props.onSellPint}
+        onSellGrowler={props.onSellGrowler} />
       <style jsx>{`
                 .main {
                     display: flex;

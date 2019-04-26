@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 function KegFill(props) {
   let color;
   
-    if (props.fill > 90) {
-      color = "green";
-    } else if (props.fill > 55) {
-      color = "greenyellow";
-    } else if (props.fill >= 15) {
-      color = "darkorange";
-    } else {
-      color = "red";
-    }
+  if (props.fill > 90) {
+    color = 'green';
+  } else if (props.fill > 55) {
+    color = 'greenyellow';
+  } else if (props.fill >= 15) {
+    color = 'darkorange';
+  } else {
+    color = 'red';
+  }
   
 
-  async function onSellClick() {
-    await props.onKegSelection(props.id);
+  function onSellClick() {
+    props.onKegSelection(props.id);
     props.onSellPint();
   }
 
