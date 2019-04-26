@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import KegFill from './KegFill';
+import AdminButtons from './AdminButtons';
 
 function Keg(props){
   
-  async function handleDeleteClick() {
-    await props.onKegSelection(props.id);
-    props.onDeleteKeg();
+  let buttons;
+  
+  if (props.routerPath === '/admin'){
+    buttons = <AdminButtons onKegSelection={props.onKegSelection}
+      onDeleteKeg={props.onDeleteKeg}
+      onEditKeg={props.onEditKeg}
+      id={props.id} />;
   } 
+
 
   return (
     <div className="main">
@@ -24,13 +30,14 @@ function Keg(props){
         <h3>${props.price}</h3>
         <h5>{props.alcoholContent}%</h5>
       </div>
-      <button onClick={handleDeleteClick}>DELETE</button>
       
       <KegFill fill={props.fill}
         id={props.id}
         onKegSelection={props.onKegSelection}
         onSellPint={props.onSellPint}
         onSellGrowler={props.onSellGrowler} />
+
+      {buttons}
       
       <style jsx>{`
                 .main {
