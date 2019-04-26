@@ -25,7 +25,8 @@ function Keg(props){
       type={props.type}
       fill={props.fill}
       id={props.id} 
-      onEditKeg={props.onEditKeg}/>;
+      onEditKeg={props.onEditKeg}
+      onKegSelection={props.onKegSelection} />;
   } 
 
 

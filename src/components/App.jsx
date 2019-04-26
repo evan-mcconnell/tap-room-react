@@ -54,7 +54,7 @@ class App extends React.Component {
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
-    // this.handleEditKeg = this.handleEditKeg.bind(this);
+    this.handleEditKeg = this.handleEditKeg.bind(this);
     this.handleShowEditForm = this.handleShowEditForm.bind(this);
     this.handleKegSelection = this.handleKegSelection.bind(this);
     this.handleSellPint = this.handleSellPint.bind(this);
@@ -86,10 +86,12 @@ class App extends React.Component {
     console.log(this.state.showEditForm);
   }
 
-  handleEditKeg() {
+  handleEditKeg(keg) {
+    console.log("at app", keg)
+    console.log("at app", {[keg.id]: keg})
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[this.state.selectedKeg] = {[keg.id]: keg};
     this.setState({masterKegList: newMasterKegList});
-
   }
 
 

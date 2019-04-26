@@ -9,7 +9,7 @@ function KegList(props) {
     <div className="main">
       
       <div className="list">
-        {Object.keys(props.kegList).map(function(kegID){
+        {Object.keys(props.kegList).map(function(kegID, index){
           let keg = props.kegList[kegID];
           return <Keg name={keg.name}
             brand={keg.brand}
@@ -18,7 +18,7 @@ function KegList(props) {
             type={keg.type}
             fill={keg.fill}
             id={keg.id} 
-            key={keg.id} 
+            key={index}
             routerPath={props.routerPath}
             onKegSelection={props.onKegSelection}
             onSellPint={props.onSellPint}

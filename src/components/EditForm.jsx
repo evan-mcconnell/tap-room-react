@@ -7,10 +7,32 @@ function EditForm(props){
   let _price = props.price;
   let _alcoholContent = props.alcoholContent;
   let _type = props.type;
+  let _fill = props.fill;
 
-  function handleEditKegSubmission(event){
+  async function handleEditKegSubmission(event){
+    console.log(_name.value);
+    console.log(_brand.value);
+    console.log(_price.value);
+    console.log(_alcoholContent.value);
+    console.log(_type.value);
+    console.log(_fill.value);
     event.preventDefault();
-    props.onEditKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), alcoholContent: parseInt(_alcoholContent.value), type: _type.value, fill: 124, id: v4()});
+    let newname = _name.value ? _name.value : props.name;
+    let newbrand = _brand.value ? _name.value : props.brand;
+    let newprice = _price.value ? _name.value : props.price;
+    let newalcoholContent = _alcoholContent.value ? _name.value : props.alcoholContent;
+    let newtype = _type.value ? _name.value : props.type;
+    let newfill = _fill.value ? _name.value : props.fill;
+    await props.onKegSelection(props.id);
+    props.onEditKeg({
+      name: newname,
+      brand: newbrand,
+      price: newprice,
+      alcoholContent: newalcoholContent, 
+      type: newtype,
+      fill: newfill,
+      id: props.id
+    });
     console.log(_name.value);
     // _name.value = '';
     // _brand.value = '';
@@ -46,8 +68,28 @@ function EditForm(props){
           id="type"
           placeholder={props.type}
           ref={(input) => {_type = input;}}/>
+        <input
+          type="number"
+          id="type"
+          placeholder={props.fill}
+          ref={(input) => {_fill = input;}}/><br/>
         <button type="submit">Submit Edit</button>
       </form>
+      <style jsx>{`
+        input {
+          width: 110px;
+          border-radius: 5px;
+          line-height: 16px;
+          margin: 5px;
+        }
+        button {
+          font-size: 14px;
+          width: 100px;
+          height: 30px;
+          border-radius: 20px;
+          margin: 10px;
+        }
+      `}</style>
     </div>
   )
 }
