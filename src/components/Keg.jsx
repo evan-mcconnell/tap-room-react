@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import KegFill from './KegFill';
 
 function Keg(props){
+  
   return (
     <div className="main">
       <div className="sub-main">
@@ -18,11 +19,14 @@ function Keg(props){
         <h3>${props.price}</h3>
         <h5>{props.alcoholContent}%</h5>
       </div>
+      <button onClick={props.onDeleteKeg(props.id)}>DELETE</button>
+      
       <KegFill fill={props.fill}
         id={props.id}
         onKegSelection={props.onKegSelection}
         onSellPint={props.onSellPint}
         onSellGrowler={props.onSellGrowler} />
+      
       <style jsx>{`
                 .main {
                     display: flex;
@@ -66,8 +70,9 @@ Keg.propTypes = {
   type: PropTypes.string,
   fill: PropTypes.number,
   onSellPint: PropTypes.func,
+  onSellGrowler: PropTypes.func,
+  onDeleteKeg: PropTypes.func,
   onKegSelection: PropTypes.func,
-  onSellGrowler: PropTypes.func
 };
 
 export default Keg;

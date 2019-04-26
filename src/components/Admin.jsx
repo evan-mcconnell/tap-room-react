@@ -8,7 +8,7 @@ function Admin(props) {
     <div className='main'>
       <NewKegForm onAddNewKeg={props.onAddNewKeg}
         onKegSelection={props.onKegSelection} />
-        <div className="list">
+      <div className="list">
         {Object.keys(props.kegList).map(function(kegID){
           let keg = props.kegList[kegID];
           return <Keg name={keg.name}
@@ -19,13 +19,15 @@ function Admin(props) {
             fill={keg.fill}
             id={keg.id} 
             key={keg.id} 
+            routerPath={props.routerPath}
             onKegSelection={props.onKegSelection}
-            onSellPint={props.onSellPint}
+            onDeleteKeg={props.onDeleteKeg}
+            onEditKeg={props.onEditKeg}
             onSellGrowler={props.onSellGrowler} />;
         }
         )}
-        </div>
-        <style jsx>{`
+      </div>
+      <style jsx>{`
           .main {
             background-color: rgba(182,197,170,0.9);
             width: 80%;
@@ -45,6 +47,7 @@ function Admin(props) {
 Admin.propTypes = {
   kegList: PropTypes.object,
   onKegSelection: PropTypes.func,
+  onDeleteKeg: PropTypes.func,
   routerPath: PropTypes.string
 };
 

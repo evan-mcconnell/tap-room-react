@@ -52,21 +52,35 @@ class App extends React.Component {
       selectedKeg: null
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
+    this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
+    this.handleEditKeg = this.handleEditKeg.bind(this);
     this.handleKegSelection = this.handleKegSelection.bind(this);
     this.handleSellPint = this.handleSellPint.bind(this);
     this.handleSellGrowler = this.handleSellGrowler.bind(this);
   }
 
+  handleKegSelection(keg) {
+    this.setState({selectedKeg: keg});
+    console.log('new Select', this.state.selectedKeg);
+  }
+
   handleAddNewKeg(newKeg){
-    var newMasterKegList = [...this.state.masterKegList];
-    newMasterKegList.push(newKeg);
+    console.log(newKeg);
+    var newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKeg.id]: newKeg});
     this.setState({masterKegList: newMasterKegList});
     console.log(this.state.masterKegList);
   }
 
-  handleKegSelection(keg) {
-    this.setState({selectedKeg: keg});
-    console.log('new Select', this.state.selectedKeg);
+  handleDeleteKeg(keg) {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    delete newMasterKegList[keg];
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleEditKeg() {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    delete newMasterKegList[this.state.selectedKeg];
+    this.setState({masterKegList: newMasterKegList});
   }
 
   handleSellPint(){
@@ -99,11 +113,13 @@ class App extends React.Component {
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}
             onKegSelection={this.handleKegSelection} 
             onSellPint={this.handleSellPint} 
-            onSellGrowler={this.handleSellGrowler} />} />
+            onSellGrowler={this.handleSellGrowler} 
+            onDeleteKeg={this.handleDeleteKeg} />} />
           <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList}
             onAddNewKeg={this.handleAddNewKeg} 
             onKegSelection={this.handleKegSelection}
-            routerPath={props.location.pathname} />} />
+            routerPath={props.location.pathname} 
+            onDeleteKeg={this.handleDeleteKeg} />} />
           <Route component={Error404} />
         </Switch>
         <Footer/>
