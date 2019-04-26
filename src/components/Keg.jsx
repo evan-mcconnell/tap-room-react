@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import KegFillControl from './KegFillControl';
+import KegFill from './KegFill';
 
 function Keg(props){
-  console.log(props.fill)
   return (
     <div className="main">
       <div className="sub-main">
@@ -19,7 +18,11 @@ function Keg(props){
         <h3>${props.price}</h3>
         <h5>{props.alcoholContent}%</h5>
       </div>
-      <KegFillControl fill={props.fill}/>
+      <KegFill fill={props.fill}
+              id={props.id}
+              onKegSelection={props.onKegSelection}
+              onSellPint={props.onSellPint}
+              onSellGrowler={props.onSellGrowler} />
       <style jsx>{`
                 .main {
                     display: flex;
@@ -61,7 +64,10 @@ Keg.propTypes = {
   price: PropTypes.number,
   alcoholContent: PropTypes.number,
   type: PropTypes.string,
-  fill: PropTypes.number
+  fill: PropTypes.number,
+  onSellPint: PropTypes.func,
+  onKegSelection: PropTypes.func,
+  onSellGrowler: PropTypes.func
 };
 
 export default Keg;

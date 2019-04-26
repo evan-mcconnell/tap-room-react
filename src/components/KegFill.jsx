@@ -12,15 +12,26 @@ function KegFill(props) {
   } else {
     fill = 'empty';
   }
+
+  async function onSellClick() {
+    await props.onKegSelection(props.id);
+    props.onSellPint();
+  }
+
+  function onSellGrowlerClick() {
+    props.onKegSelection(props.id);
+    props.onSellGrowler();
+  }
+
   return(
     <div className="main">
       <div className="kegFill">
         <div className={fill}></div>
       </div>
       <div className="buttons">
-        <button onClick={props.onSellClick}>Sell Pint</button>
+        <button onClick={onSellClick}>Sell Pint</button>
         <br/>
-        <button onClick={props.onSellGrowlerClick}>Sell a Growler</button>
+        <button onClick={onSellGrowlerClick}>Sell a Growler</button>
       </div>
       <style jsx>{`
                 .main {
@@ -80,8 +91,9 @@ function KegFill(props) {
 
 KegFill.propTypes = {
   fill: PropTypes.number,
-  onSellClick: PropTypes.func,
-  onSellGrowlerClick: PropTypes.func
+  onSellPint: PropTypes.func,
+  onKegSelection: PropTypes.func,
+  onSellGrowler: PropTypes.func
 };
 
 export default KegFill;

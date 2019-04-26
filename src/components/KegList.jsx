@@ -4,7 +4,6 @@ import Keg from './Keg';
 
 
 function KegList(props) {
-  console.log(props.kegList);
   return(
     <div className="main">
       
@@ -17,10 +16,10 @@ function KegList(props) {
             alcoholContent={keg.alcoholContent}
             type={keg.type}
             fill={keg.fill}
-            key={keg.id} 
-            onKegSelection={onKegSelection}
-            onSellPint={onSellPint}
-            onSellGrowler={onSellGrowler} />
+            id={keg.id} 
+            onKegSelection={props.onKegSelection}
+            onSellPint={props.onSellPint}
+            onSellGrowler={props.onSellGrowler} />
         }
         )}
       </div>
@@ -42,8 +41,11 @@ function KegList(props) {
   );
 }
 
-// KegList.propTypes = {
-//   kegList: PropTypes.Object
-// };
+KegList.propTypes = {
+  kegList: PropTypes.object,
+  onSellPint: PropTypes.func,
+  onKegSelection: PropTypes.func,
+  onSellGrowler: PropTypes.func
+};
 
 export default KegList;

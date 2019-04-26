@@ -12,7 +12,8 @@ function Admin() {
 
 
 Admin.propTypes = {
-  onAddNewKeg: PropTypes.func
+  onAddNewKeg: PropTypes.func,
+  routerPath: PropTypes.string.isRequired
 };
 
 export default Admin;

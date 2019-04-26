@@ -64,27 +64,29 @@ class App extends React.Component {
     console.log(this.state.masterKegList);
   }
 
-  handleKegSelection() {
-
+  handleKegSelection(keg) {
+    this.setState({selectedKeg: keg});
+    console.log("new Select", this.state.selectedKeg)
   }
 
   handleSellPint(){
-    // if (this.state.masterKegList[this.state.selectedKeg].fill > 0) {
-    //   var fill = this.state.kegFill - 1;
-    //   this.setState({kegFill: fill});
-    // } else {
-    //   alert('This keg is empty!');
-    // }
-    // console.log(this.state.kegFill);
+    if (this.state.masterKegList[this.state.selectedKeg].fill > 0) {
+      var newMasterKegList = Object.assign({}, this.state.masterKegList);
+      newMasterKegList[this.state.selectedKeg].fill -= 1;
+      this.setState({masterKegList: newMasterKegList});
+    } else {
+      alert('This keg is empty!');
+    }
+    console.log(this.state.masterKegList[this.state.selectedKeg].fill)
   }
+
   handleSellGrowler(){
-    // if (this.state.kegFill > 4) {
-    //   var fill = this.state.kegFill - 4;
-    //   this.setState({kegFill: fill});
-    // } else {
-    //   alert('This keg is empty or near-empty!');
-    // }
-    // console.log(this.state.kegFill);
+    if (this.state.kegFill > 4) {
+      var fill = this.state.kegFill - 4;
+      this.setState({kegFill: fill});
+    } else {
+      alert('This keg is empty or near-empty!');
+    }
   }
 
   render() {
@@ -92,12 +94,12 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} 
-                                              onKegSelection={this.handeKegSelection} 
+          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList}
+                                              onKegSelection={this.handleKegSelection} 
                                               onSellPint={this.handleSellPint} 
-                                              noSellGrowler={this.handleSellGrowler} />} />
+                                              onSellGrowler={this.handleSellGrowler} />} />
           <Route path='/newKeg' render={()=><Admin onAddNewKeg={this.handleAddNewKeg} 
-                                              onKegSelection={this.handeKegSelection}
+                                              onKegSelection={this.handleKegSelection}
                                               routerPath={props.location.pathname} />} />
           <Route component={Error404} />
         </Switch>
