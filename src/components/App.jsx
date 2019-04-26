@@ -81,12 +81,14 @@ class App extends React.Component {
   }
 
   handleSellGrowler(){
-    if (this.state.kegFill > 4) {
-      var fill = this.state.kegFill - 4;
-      this.setState({kegFill: fill});
+    if (this.state.masterKegList[this.state.selectedKeg].fill > 0) {
+      var newMasterKegList = Object.assign({}, this.state.masterKegList);
+      newMasterKegList[this.state.selectedKeg].fill -= 4;
+      this.setState({masterKegList: newMasterKegList});
     } else {
-      alert('This keg is empty or near-empty!');
+      alert('This keg is empty!');
     }
+    console.log(this.state.masterKegList[this.state.selectedKeg].fill)
   }
 
   render() {

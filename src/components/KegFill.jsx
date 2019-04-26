@@ -2,16 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function KegFill(props) {
-  var fill;
-  if (props.fill > 90) {
-    fill = 'full';
-  } else if (props.fill > 55) {
-    fill = 'half';
-  } else if (props.fill >= 10) {
-    fill = 'dregs';
-  } else {
-    fill = 'empty';
-  }
+  let color;
+  
+    if (props.fill > 90) {
+      color = "green";
+    } else if (props.fill > 55) {
+      color = "greenyellow";
+    } else if (props.fill >= 15) {
+      color = "darkorange";
+    } else {
+      color = "red";
+    }
+  
 
   async function onSellClick() {
     await props.onKegSelection(props.id);
@@ -26,7 +28,7 @@ function KegFill(props) {
   return(
     <div className="main">
       <div className="kegFill">
-        <div className={fill}></div>
+        <div className="fill"></div>
       </div>
       <div className="buttons">
         <button onClick={onSellClick}>Sell Pint</button>
@@ -58,29 +60,10 @@ function KegFill(props) {
                     position: relative;
                     background-color: #dae8ce;
                 }
-                .full {
+                .fill {
                     width: 100%;
-                    height: 100%;
-                    background-color: green;
-                }
-                .half {
-                    width: 100%;
-                    height: 60%;
-                    background-color: yellow;
-                    position: absolute;
-                    bottom: 0;
-                }
-                .dregs {
-                    width: 100%;
-                    height: 20%;
-                    background-color: red;
-                    position: absolute;
-                    bottom: 0;
-                }
-                .empty {
-                    width: 100%;
-                    height: 1%;
-                    background-color: green;
+                    height: ${(props.fill)*(100/124)}%;
+                    background-color: ${color};
                     position: absolute;
                     bottom: 0;
                 }
