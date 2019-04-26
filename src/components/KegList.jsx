@@ -4,18 +4,24 @@ import Keg from './Keg';
 
 
 function KegList(props) {
+  console.log(props.kegList);
   return(
     <div className="main">
-            
+      
       <div className="list">
-        {props.kegList.map((keg, index) => 
-          <Keg name={keg.name}
+        {Object.keys(props.kegList).map(function(kegID){
+          let keg = props.kegList[kegID];
+          return <Keg name={keg.name}
             brand={keg.brand}
             price={keg.price}
             alcoholContent={keg.alcoholContent}
             type={keg.type}
             fill={keg.fill}
-            key={index} />
+            key={keg.id} 
+            onKegSelection={onKegSelection}
+            onSellPint={onSellPint}
+            onSellGrowler={onSellGrowler} />
+        }
         )}
       </div>
       <style jsx>{`
@@ -36,8 +42,8 @@ function KegList(props) {
   );
 }
 
-KegList.propTypes = {
-  kegList: PropTypes.array
-};
+// KegList.propTypes = {
+//   kegList: PropTypes.Object
+// };
 
 export default KegList;

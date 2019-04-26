@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import KegFillControl from './KegFillControl';
 
 function Keg(props){
+  console.log(props.fill)
   return (
     <div className="main">
       <div className="sub-main">

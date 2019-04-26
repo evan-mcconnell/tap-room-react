@@ -4,7 +4,8 @@ import NewKegForm from './NewKegForm';
 
 function Admin() {
     return(
-      <NewKegForm onAddNewKeg={this.props.onAddNewKeg}/>
+      <NewKegForm onAddNewKeg={this.props.onAddNewKeg}
+                  onKegSelection={props.onKegSelection} />
     );
 }
 
@@ -14,4 +15,4 @@ Admin.propTypes = {
   onAddNewKeg: PropTypes.func
 };
 
-export default NewKegControl;
+export default Admin;
