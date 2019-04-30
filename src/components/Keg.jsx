@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import KegFill from './KegFill';
 import AdminButtons from './AdminButtons';
-import EditForm from './EditForm';
 
 function Keg(props){
   
   let buttons;
-  let form;
   
   
   if (props.routerPath === '/admin'){
@@ -17,17 +15,17 @@ function Keg(props){
       id={props.id} />;
   } 
 
-  if (props.routerPath === '/admin' && (props.editForm)) {
-    form = <EditForm name={props.name}
-      brand={props.brand}
-      price={props.price}
-      alcoholContent={props.alcoholContent}
-      type={props.type}
-      fill={props.fill}
-      id={props.id} 
-      onEditKeg={props.onEditKeg}
-      onKegSelection={props.onKegSelection} />;
-  } 
+  // if (props.routerPath === '/admin' && (props.editForm)) {
+  //   form = <EditForm name={props.name}
+  //     brand={props.brand}
+  //     price={props.price}
+  //     alcoholContent={props.alcoholContent}
+  //     type={props.type}
+  //     fill={props.fill}
+  //     id={props.id} 
+  //     onEditKeg={props.onEditKeg}
+  //     onKegSelection={props.onKegSelection} />;
+  // } 
 
 
   return (
@@ -56,7 +54,6 @@ function Keg(props){
 
         {buttons}
       </div>
-      {form}
       <style jsx>{`
                 .main {
                     display: flex;
