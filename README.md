@@ -3,6 +3,7 @@
 #### React Tap Room project for Epicodus
 
 _Published_ **April 26 2019**<br>
+_Updated April 29_ <br>
 _Authors_  **Kim McConnell**
 
 1. [Description](#description)
@@ -46,21 +47,23 @@ Use React to build out the UI (Week 1) and use state with class componets to bui
 * Display all avialable kegs
 * Display the amount left in each keg
 * Display price, ABV, type
+* Be able to add, edit, and delete kegs from list as an Admin
 
 ## Non-technical Requirements
-* Make it look good
+* Make it look good <br>
+_To this end, I updated the forms to include better labeling, after getting advice that placeholders weren't enough to alow a user to understand the order of the attributes_ 
 
 ## Component Map
-#### First Draft of Component map 
-
+#### Second Draft of Component Map
 ![Component Map Second Draft](./src/assets/images/plan2.png)
+#### First Draft of Component map 
 <img src="./src/assets/images/plan.jpg" alt="Component Map First Draft" width="500px" height="300px">
 
 ### Development Specs
 * Able to click to sell pints or growlers (4 pints each) and see keg volume decrease
 * Fuctionality to add new kegs
 * Fuctionality to remove kegs
-* Fuctionality to Edit kegs (sort of)
+* Fuctionality to Edit kegs 
 * Admin user that had access to edit and create
 
 ## Stretch Goals
