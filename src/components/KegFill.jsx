@@ -35,7 +35,6 @@ function KegFill(props) {
                     display: flex;
                     flex-direction: row;
                 }
-                
                 .kegFill {
                     width: 25px;
                     height: 70px;
@@ -43,7 +42,7 @@ function KegFill(props) {
                     border-radius: 5px;
                     position: relative;
                     background-color: #dae8ce;
-                    margin: 2px;
+                    margin-left: 5px;
                 }
                 .fill {
                     width: 100%;

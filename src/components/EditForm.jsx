@@ -10,12 +10,6 @@ function EditForm(props){
   let _fill = props.fill;
 
   async function handleEditKegSubmission(event){
-    console.log(_name.value);
-    console.log(_brand.value);
-    console.log(_price.value);
-    console.log(_alcoholContent.value);
-    console.log(_type.value);
-    console.log(_fill.value);
     event.preventDefault();
     let newname = _name.value ? _name.value : props.kegList[props.selectedKeg].name;
     let newbrand = _brand.value ? _brand.value : props.kegList[props.selectedKeg].brand;
@@ -31,7 +25,6 @@ function EditForm(props){
       newtype,
       newfill,
     );
-    console.log(props.selectedKeg)
     _name.value = '';
     _brand.value = '';
     _price.value = '';

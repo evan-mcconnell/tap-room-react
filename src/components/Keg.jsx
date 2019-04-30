@@ -15,19 +15,6 @@ function Keg(props){
       id={props.id} />;
   } 
 
-  // if (props.routerPath === '/admin' && (props.editForm)) {
-  //   form = <EditForm name={props.name}
-  //     brand={props.brand}
-  //     price={props.price}
-  //     alcoholContent={props.alcoholContent}
-  //     type={props.type}
-  //     fill={props.fill}
-  //     id={props.id} 
-  //     onEditKeg={props.onEditKeg}
-  //     onKegSelection={props.onKegSelection} />;
-  // } 
-
-
   return (
     <div className="container">
       <div className="main">
@@ -70,6 +57,7 @@ function Keg(props){
                 .main-info {
                     display: flex;
                     flex-direction: row;
+                    min-width: 280px;
                 }
                 h2 {
                     margin-top: 10px;

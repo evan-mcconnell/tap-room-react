@@ -63,14 +63,11 @@ class App extends React.Component {
 
   async handleKegSelection(keg) {
     await this.setState({selectedKeg: keg});
-    console.log('new Select', this.state.selectedKeg);
   }
 
   handleAddNewKeg(newKeg){
-    console.log(newKeg);
     var newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKeg.id]: newKeg});
     this.setState({masterKegList: newMasterKegList});
-    console.log(this.state.masterKegList);
   }
 
   handleDeleteKeg() {
@@ -83,12 +80,9 @@ class App extends React.Component {
     this.setState(prevState => ({
       showEditForm: !prevState.showEditForm
     }));
-    console.log(this.state.showEditForm);
   }
 
   handleEditKeg(name, brand, price, alcoholContent, type, fill) {
-    // console.log("at app", keg)
-    // console.log("at app", {[this.state.selectedKeg]: keg})
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
     newMasterKegList[this.state.selectedKeg] = {
       name: name,
@@ -99,7 +93,6 @@ class App extends React.Component {
       fill: fill,
       id: this.state.selectedKeg,
     };
-    console.log(newMasterKegList)
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -112,7 +105,6 @@ class App extends React.Component {
     } else {
       alert('This keg is empty!');
     }
-    console.log(this.state.masterKegList[this.state.selectedKeg].fill);
   }
 
   handleSellGrowler(){
@@ -123,7 +115,6 @@ class App extends React.Component {
     } else {
       alert('This keg is empty!');
     }
-    console.log(this.state.masterKegList[this.state.selectedKeg].fill);
   }
 
   render() {
