@@ -19,19 +19,18 @@ function EditForm(props){
     event.preventDefault();
     let newname = _name.value ? _name.value : props.kegList[props.selectedKeg].name;
     let newbrand = _brand.value ? _brand.value : props.kegList[props.selectedKeg].brand;
-    let newprice = _price.value ? _price.value : props.kegList[props.selectedKeg].price;
-    let newalcoholContent = _alcoholContent.value ? _alcoholContent.value : props.kegList[props.selectedKeg].alcoholContent;
+    let newprice = _price.value ? parseInt(_price.value) : props.kegList[props.selectedKeg].price;
+    let newalcoholContent = _alcoholContent.value ? parseInt(_alcoholContent.value) : props.kegList[props.selectedKeg].alcoholContent;
     let newtype = _type.value ? _type.value : props.kegList[props.selectedKeg].type;
-    let newfill = _fill.value ? _fill.value : props.kegList[props.selectedKeg].fill;
-    await props.onKegSelection(props.kegList.id);
-    props.onEditKeg({
-      name: newname,
-      brand: newbrand,
-      price: newprice,
-      alcoholContent: newalcoholContent, 
-      type: newtype,
-      fill: newfill,
-    });
+    let newfill = _fill.value ? parseInt(_fill.value) : props.kegList[props.selectedKeg].fill;
+    props.onEditKeg(
+      newname,
+      newbrand,
+      newprice,
+      newalcoholContent, 
+      newtype,
+      newfill,
+    );
     console.log(props.selectedKeg)
     _name.value = '';
     _brand.value = '';
@@ -42,7 +41,7 @@ function EditForm(props){
   }
   return(
     <div>
-      <h5>{props.kegList[props.selectedKeg].name}</h5>
+      <h2>Edit {props.kegList[props.selectedKeg].name}</h2>
      <form onSubmit={handleEditKegSubmission}>
       <div className='inner-form'>
         <label> Name<br/>

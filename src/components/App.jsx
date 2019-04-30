@@ -86,14 +86,21 @@ class App extends React.Component {
     console.log(this.state.showEditForm);
   }
 
-  handleEditKeg(keg) {
-    console.log("at app", keg)
-    console.log("at app", {[selectedKeg]: keg})
+  handleEditKeg(name, brand, price, alcoholContent, type, fill) {
+    // console.log("at app", keg)
+    // console.log("at app", {[this.state.selectedKeg]: keg})
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
-    newMasterKegList[this.state.selectedKeg] = {[keg.id]: keg};
+    newMasterKegList[this.state.selectedKeg] = {
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent, 
+      type: type,
+      fill: fill
+    };
+    console.log(newMasterKegList)
     this.setState({masterKegList: newMasterKegList});
   }
-
 
 
   handleSellPint(){
