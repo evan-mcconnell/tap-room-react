@@ -25,8 +25,7 @@ function KegList(props) {
             onSellGrowler={props.onSellGrowler} 
             onDeleteKeg={props.onDeleteKeg}
             onEditKeg={props.onEditKeg}
-            onShowEditForm={props.onShowEditForm} 
-            editForm = {props.editForm} />;
+            onShowEditForm={props.onShowEditForm}  />;
         }
         )}
       </div>
@@ -50,10 +49,14 @@ function KegList(props) {
 }
 
 KegList.propTypes = {
+  routerPath: PropTypes.string,
   kegList: PropTypes.object,
   onSellPint: PropTypes.func,
   onKegSelection: PropTypes.func,
-  onSellGrowler: PropTypes.func
+  onSellGrowler: PropTypes.func,
+  onShowEditForm: PropTypes.func,
+  onDeleteKeg: PropTypes.func,
+  onEditKeg: PropTypes.func,
 };
 
 export default KegList;

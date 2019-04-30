@@ -58,6 +58,7 @@ function KegFill(props) {
 }
 
 KegFill.propTypes = {
+  routerPath: PropTypes.string,
   fill: PropTypes.number,
   id: PropTypes.string,
   onSellPint: PropTypes.func,

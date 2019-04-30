@@ -98,8 +98,10 @@ Keg.propTypes = {
   id: PropTypes.string,
   onSellPint: PropTypes.func,
   onSellGrowler: PropTypes.func,
+  onShowEditForm: PropTypes.func,
   onDeleteKeg: PropTypes.func,
   onKegSelection: PropTypes.func,
+  routerPath: PropTypes.string,
 };
 
 export default Keg;

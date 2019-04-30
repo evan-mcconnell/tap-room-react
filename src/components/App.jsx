@@ -96,7 +96,8 @@ class App extends React.Component {
       price: price,
       alcoholContent: alcoholContent, 
       type: type,
-      fill: fill
+      fill: fill,
+      id: this.state.selectedKeg,
     };
     console.log(newMasterKegList)
     this.setState({masterKegList: newMasterKegList});

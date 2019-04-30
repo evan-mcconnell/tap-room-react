@@ -2,38 +2,37 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
-import EditForm from './EditForm'
+import EditForm from './EditForm';
 
 function Admin(props) {
   let form;
 
   if (props.editForm) {
-      form = <EditForm kegList={props.kegList}
-        onEditKeg={props.onEditKeg}
-        onShowEditForm={props.onShowEditForm}
-        onKegSelection={props.onKegSelection}
-        selectedKeg={props.selectedKeg} />;
-    } 
+    form = <EditForm kegList={props.kegList}
+      onEditKeg={props.onEditKeg}
+      onShowEditForm={props.onShowEditForm}
+      onKegSelection={props.onKegSelection}
+      selectedKeg={props.selectedKeg} />;
+  } 
 
   return(
     <div className='main'>
-    <div className='form'>
-      <NewKegForm onAddNewKeg={props.onAddNewKeg}
-        onKegSelection={props.onKegSelection} />
-    </div>
-    <div className='edit'>
-      {form}
-    </div>
-    <div className='list'>
-      <KegList kegList={props.kegList}
+      <div className='form'>
+        <NewKegForm onAddNewKeg={props.onAddNewKeg}
+          onKegSelection={props.onKegSelection} />
+      </div>
+      <div className='edit'>
+        {form}
+      </div>
+      <div className='list'>
+        <KegList kegList={props.kegList}
           routerPath={props.routerPath}
           onKegSelection={props.onKegSelection} 
           onSellPint={props.onSellPint} 
           onSellGrowler={props.onSellGrowler} 
           onDeleteKeg={props.onDeleteKeg}
           onEditKeg={props.onEditKeg}
-          onShowEditForm={props.onShowEditForm}
-          editForm = {props.editForm}/>
+          onShowEditForm={props.onShowEditForm} />
       </div>
       <style jsx>{`
           .main {
@@ -65,12 +64,17 @@ function Admin(props) {
 
 
 Admin.propTypes = {
+  editForm: PropTypes.bool,
   kegList: PropTypes.object,
+  selectedKeg: PropTypes.string,
   onKegSelection: PropTypes.func,
   onDeleteKeg: PropTypes.func,
-  onEditeKeg: PropTypes.func,
+  onEditKeg: PropTypes.func,
   onAddNewKeg: PropTypes.func,
-  routerPath: PropTypes.string
+  routerPath: PropTypes.string,
+  onSellPint: PropTypes.func,
+  onSellGrowler: PropTypes.func,
+  onShowEditForm: PropTypes.func,
 };
 
 export default Admin;
