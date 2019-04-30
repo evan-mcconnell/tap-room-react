@@ -8,15 +8,11 @@ function Admin(props) {
   let form;
 
   if (props.editForm) {
-      form = <EditForm name={props.name}
-        brand={props.brand}
-        price={props.price}
-        alcoholContent={props.alcoholContent}
-        type={props.type}
-        fill={props.fill}
-        id={props.id} 
+      form = <EditForm kegList={props.kegList}
         onEditKeg={props.onEditKeg}
-        onKegSelection={props.onKegSelection} />;
+        onShowEditForm={props.onShowEditForm}
+        onKegSelection={props.onKegSelection}
+        selectedKeg={props.selectedKeg} />;
     } 
 
   return(

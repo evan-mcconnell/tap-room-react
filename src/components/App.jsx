@@ -50,7 +50,7 @@ class App extends React.Component {
         }
       },
       selectedKeg: null,
-      showEditForm: true
+      showEditForm: false
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
@@ -61,8 +61,8 @@ class App extends React.Component {
     this.handleSellGrowler = this.handleSellGrowler.bind(this);
   }
 
-  handleKegSelection(keg) {
-    this.setState({selectedKeg: keg});
+  async handleKegSelection(keg) {
+    await this.setState({selectedKeg: keg});
     console.log('new Select', this.state.selectedKeg);
   }
 
@@ -88,7 +88,7 @@ class App extends React.Component {
 
   handleEditKeg(keg) {
     console.log("at app", keg)
-    console.log("at app", {[keg.id]: keg})
+    console.log("at app", {[selectedKeg]: keg})
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
     newMasterKegList[this.state.selectedKeg] = {[keg.id]: keg};
     this.setState({masterKegList: newMasterKegList});
@@ -137,6 +137,7 @@ class App extends React.Component {
             onEditKeg={this.handleEditKeg} 
             onShowEditForm = {this.handleShowEditForm}
             editForm = {this.state.showEditForm}
+            selectedKeg = {this.state.selectedKeg}
           />} />
           <Route component={Error404} />
         </Switch>

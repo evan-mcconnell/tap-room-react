@@ -17,13 +17,13 @@ function EditForm(props){
     console.log(_type.value);
     console.log(_fill.value);
     event.preventDefault();
-    let newname = _name.value ? _name.value : props.name;
-    let newbrand = _brand.value ? _name.value : props.brand;
-    let newprice = _price.value ? _name.value : props.price;
-    let newalcoholContent = _alcoholContent.value ? _name.value : props.alcoholContent;
-    let newtype = _type.value ? _name.value : props.type;
-    let newfill = _fill.value ? _name.value : props.fill;
-    await props.onKegSelection(props.id);
+    let newname = _name.value ? _name.value : props.kegList[props.selectedKeg].name;
+    let newbrand = _brand.value ? _brand.value : props.kegList[props.selectedKeg].brand;
+    let newprice = _price.value ? _price.value : props.kegList[props.selectedKeg].price;
+    let newalcoholContent = _alcoholContent.value ? _alcoholContent.value : props.kegList[props.selectedKeg].alcoholContent;
+    let newtype = _type.value ? _type.value : props.kegList[props.selectedKeg].type;
+    let newfill = _fill.value ? _fill.value : props.kegList[props.selectedKeg].fill;
+    await props.onKegSelection(props.kegList.id);
     props.onEditKeg({
       name: newname,
       brand: newbrand,
@@ -31,54 +31,55 @@ function EditForm(props){
       alcoholContent: newalcoholContent, 
       type: newtype,
       fill: newfill,
-      id: props.id
     });
-    console.log(_name.value);
+    console.log(props.selectedKeg)
     _name.value = '';
     _brand.value = '';
     _price.value = '';
     _alcoholContent.value = '';
     _type.value = '';
+    props.onShowEditForm();
   }
   return(
     <div>
+      <h5>{props.kegList[props.selectedKeg].name}</h5>
      <form onSubmit={handleEditKegSubmission}>
       <div className='inner-form'>
         <label> Name<br/>
         <input
           type="text"
           id="name"
-          placeholder={props.name}
+          placeholder={props.kegList[props.selectedKeg].name}
           ref={(input) => {_name = input;}}/></label>
           <label>Brand<br/>
         <input
           type="text"
           id="brand"
-          placeholder={props.brand}
+          placeholder={props.kegList[props.selectedKeg].brand}
           ref={(input) => {_brand = input;}}/></label>
           <label>Price<br/>
         <input
           type="number"
           id="price"
-          placeholder={props.price}
+          placeholder={props.kegList[props.selectedKeg].price}
           ref={(input) => {_price = input;}}/></label>
           <label>ABV<br/>
         <input
           type="text"
           id="alcoholContent"
-          placeholder={props.alcoholContent}
+          placeholder={props.kegList[props.selectedKeg].alcoholContent}
           ref={(input) => {_alcoholContent = input;}}/></label>
           <label>Type<br/>
         <input
           type="text"
           id="type"
-          placeholder={props.type}
+          placeholder={props.kegList[props.selectedKeg].type}
           ref={(input) => {_type = input;}}/></label>
           <label>Fill<br/>
         <input
           type="number"
           id="type"
-          placeholder={props.fill}
+          placeholder={props.kegList[props.selectedKeg].fill}
           ref={(input) => {_fill = input;}}/></label> <br/>
         </div>
         <button type="submit">Submit Edit</button>
