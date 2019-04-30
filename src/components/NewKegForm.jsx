@@ -44,11 +44,14 @@ function NewKegForm(props){
           id="alcoholContent"
           placeholder="ABV"
           ref={(input) => {_alcoholContent = input;}}/>
-        <input
-          type="text"
-          id="type"
-          placeholder="Drink type"
-          ref={(input) => {_type = input;}}/>
+          <select
+            ref={select => {_type = select}}
+            name="type">
+            <option value="">Select a Type</option>
+            <option value="Kombucha">Kombucha</option>
+            <option value="IPA">IPA</option>
+            <option value="Stout">Stout</option>
+          </select>
         <button type="submit">Add New Keg</button>
       </form>
       <style jsx>{`
@@ -68,12 +71,18 @@ function NewKegForm(props){
                     font-size: 16px;
                     border-radius: 5px;
                 }
+                select {
+                  margin: 10px;
+                    line-height: 28px;
+                    font-size: 18px;
+                    border-radius: 5px;
+                }
                 button {
                     font-size: 1.7vw;
                     color: rgb(182,197,170);
                     background-color: #35454e;
                     height: 30px;
-                    border-radius: 10px;
+                    border-radius: 8px;
                     width: 40%;
                     margin: auto;
                 }
