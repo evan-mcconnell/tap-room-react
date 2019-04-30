@@ -34,53 +34,70 @@ function EditForm(props){
       id: props.id
     });
     console.log(_name.value);
-    // _name.value = '';
-    // _brand.value = '';
-    // _price.value = '';
-    // _alcoholContent.value = '';
-    // _type.value = '';
+    _name.value = '';
+    _brand.value = '';
+    _price.value = '';
+    _alcoholContent.value = '';
+    _type.value = '';
   }
   return(
     <div>
      <form onSubmit={handleEditKegSubmission}>
+      <div className='inner-form'>
+        <label> Name<br/>
         <input
           type="text"
           id="name"
           placeholder={props.name}
-          ref={(input) => {_name = input;}}/>
+          ref={(input) => {_name = input;}}/></label>
+          <label>Brand<br/>
         <input
           type="text"
           id="brand"
           placeholder={props.brand}
-          ref={(input) => {_brand = input;}}/>
+          ref={(input) => {_brand = input;}}/></label>
+          <label>Price<br/>
         <input
           type="number"
           id="price"
           placeholder={props.price}
-          ref={(input) => {_price = input;}}/>
+          ref={(input) => {_price = input;}}/></label>
+          <label>ABV<br/>
         <input
           type="text"
           id="alcoholContent"
           placeholder={props.alcoholContent}
-          ref={(input) => {_alcoholContent = input;}}/>
+          ref={(input) => {_alcoholContent = input;}}/></label>
+          <label>Type<br/>
         <input
           type="text"
           id="type"
           placeholder={props.type}
-          ref={(input) => {_type = input;}}/>
+          ref={(input) => {_type = input;}}/></label>
+          <label>Fill<br/>
         <input
           type="number"
           id="type"
           placeholder={props.fill}
-          ref={(input) => {_fill = input;}}/><br/>
+          ref={(input) => {_fill = input;}}/></label> <br/>
+        </div>
         <button type="submit">Submit Edit</button>
       </form>
       <style jsx>{`
+        .inner-form {
+          display: flex;
+          flex-direction: row; 
+          justify-content: center;
+        }
+        label {
+          text-align: left;
+          margin: 10px;
+        }
         input {
           width: 110px;
           border-radius: 5px;
           line-height: 16px;
-          margin: 5px;
+          margin-left: -5px;
         }
         button {
           font-size: 14px;

@@ -2,13 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
+import EditForm from './EditForm'
 
 function Admin(props) {
+  let form;
+
+  if (props.editForm) {
+      form = <EditForm name={props.name}
+        brand={props.brand}
+        price={props.price}
+        alcoholContent={props.alcoholContent}
+        type={props.type}
+        fill={props.fill}
+        id={props.id} 
+        onEditKeg={props.onEditKeg}
+        onKegSelection={props.onKegSelection} />;
+    } 
+
   return(
     <div className='main'>
     <div className='form'>
       <NewKegForm onAddNewKeg={props.onAddNewKeg}
         onKegSelection={props.onKegSelection} />
+    </div>
+    <div className='edit'>
+      {form}
     </div>
     <div className='list'>
       <KegList kegList={props.kegList}
@@ -33,6 +51,12 @@ function Admin(props) {
             margin: auto;
             padding-bottom: 50px;
             text-align: center;
+          }
+          .edit {
+            background-color: rgba(182,197,170,0.9);
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
           }
           .list {
             width: 100%;
