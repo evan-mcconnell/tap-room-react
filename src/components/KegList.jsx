@@ -34,6 +34,7 @@ function KegList(props) {
                     background-color: rgba(182,197,170,0.9);
                     width: 80%;
                     max-width: 1200px;
+                    min-height: 55vh;
                     margin: auto;
                     padding-bottom: 200px;
                 }
