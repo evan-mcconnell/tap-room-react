@@ -33,7 +33,7 @@ function FillButtons(props) {
       }
       `}</style>
     </div>
-  )
+  );
 }
 
 FillButtons.propTypes = {

@@ -44,14 +44,14 @@ function NewKegForm(props){
           id="alcoholContent"
           placeholder="ABV"
           ref={(input) => {_alcoholContent = input;}}/>
-          <select
-            ref={select => {_type = select}}
-            name="type">
-            <option value="">Select a Type</option>
-            <option value="Kombucha">Kombucha</option>
-            <option value="IPA">IPA</option>
-            <option value="Stout">Stout</option>
-          </select>
+        <select
+          ref={select => {_type = select;}}
+          name="type">
+          <option value="">Select a Type</option>
+          <option value="Kombucha">Kombucha</option>
+          <option value="IPA">IPA</option>
+          <option value="Stout">Stout</option>
+        </select>
         <button type="submit">Add New Keg</button>
       </form>
       <style jsx>{`

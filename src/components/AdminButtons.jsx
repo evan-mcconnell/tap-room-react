@@ -34,13 +34,13 @@ function AdminButtons(props) {
       }
       `}</style>
     </div>
-  )
+  );
 }
 
 AdminButtons.propTypes = {
   id: PropTypes.string,
   onDeleteKeg: PropTypes.func,
   onShowEditForm: PropTypes.func
-}
+};
 
 export default AdminButtons;
