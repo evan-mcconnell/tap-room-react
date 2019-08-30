@@ -23,7 +23,7 @@ function FillButtons(props) {
           padding: 5px;
       }
       button {
-          background-color: #dae8ce;
+          background-color: rgb(240, 240, 240);
           color: #35454e;
           border: 1px solid #35454e;
           border-radius: 5px;

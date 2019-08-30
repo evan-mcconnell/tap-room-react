@@ -8,8 +8,8 @@ function Footer() {
       <style jsx>{`
         .main {
             height: 100px;
-            background-color: #35454e;
-            color: #b6c5aa;
+            background-color: rgb(13, 11, 7);
+            color: white;
             display: flex;
         }
         p {

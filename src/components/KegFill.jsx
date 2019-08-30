@@ -41,7 +41,7 @@ function KegFill(props) {
                     border: 2px solid #35454e;
                     border-radius: 5px;
                     position: relative;
-                    background-color: #dae8ce;
+                    background-color: rgb(240, 240, 240);
                     margin-left: 5px;
                 }
                 .fill {

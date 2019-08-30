@@ -22,7 +22,7 @@ function NewKegForm(props){
 
   return (
     <div className="main">
-      <h3>Add a New Keg to the List</h3>
+      <h2>Add a New Keg to the List</h2>
       <form onSubmit={handleNewKegSubmission}>
         <input
           type="text"
@@ -55,9 +55,13 @@ function NewKegForm(props){
         <button type="submit">Add New Keg</button>
       </form>
       <style jsx>{`
-                h3 {
+                h2 {
                     padding-top: 30px;
-                    color: #35454e;
+                    padding-bottom: 10px;
+                    color: transparent;
+                    text-shadow: 0 0 1px rgba(255,255,255,0.95);
+                    font-size: 30px;
+                    font-family: 'Nova Round';
                 }
                 form {
                     display: flex;
@@ -78,10 +82,10 @@ function NewKegForm(props){
                     border-radius: 5px;
                 }
                 button {
-                    font-size: 1.7vw;
-                    color: rgb(182,197,170);
-                    background-color: #35454e;
-                    height: 30px;
+                    font-size: 1.8vw;
+                    color: white;
+                    background-color: black;
+                    height: 40px;
                     border-radius: 8px;
                     width: 40%;
                     margin: auto;

@@ -40,7 +40,7 @@ function Admin(props) {
             width: 100%;
           }
           .form {
-            background-color: rgba(182,197,170,0.9);
+            background-color: rgba(67,70,75,0.6);
             width: 80%;
             max-width: 1200px;
             margin: auto;
@@ -48,7 +48,7 @@ function Admin(props) {
             text-align: center;
           }
           .edit {
-            background-color: rgba(182,197,170,0.9);
+            background-color: rgba(67,70,75,0.6);
             width: 80%;
             max-width: 1200px;
             margin: auto;
