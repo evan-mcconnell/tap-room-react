@@ -20,7 +20,7 @@ class App extends React.Component {
         //   brand: 'Brew Hop',
         //   price: 5,
         //   alcoholContent: 5.5,
-        //   type: 'IPA',
+        //   variety: 'IPA',
         //   fill: 124
         // },
         // {
@@ -28,7 +28,7 @@ class App extends React.Component {
         //   brand: 'Brew Hop',
         //   price: 6,
         //   alcoholContent: 5.5,
-        //   type: 'IPA',
+        //   variety: 'IPA',
         //   fill: 10
         // },
         // {
@@ -36,7 +36,7 @@ class App extends React.Component {
         //   brand: 'Bucha Brothers',
         //   price: 4,
         //   alcoholContent: 0.5,
-        //   type: 'Kombucha',
+        //   variety: 'Kombucha',
         //   fill: 124
         // },
         // {
@@ -44,7 +44,7 @@ class App extends React.Component {
         //   brand: 'West Coast Malt',
         //   price: 6,
         //   alcoholContent: 7.5,
-        //   type: 'Stout',
+        //   variety: 'Stout',
         //   fill: 60
         // }
       ]
@@ -54,12 +54,11 @@ class App extends React.Component {
 
   async getData() {
     try {
-      const response = await axios.get('http://localhost:3000/keg');
-      console.log(response.data);
+      const response = await axios.get('http://localhost:8000/api/kegs');
+      console.log("DATA", response.data);
       var newMasterKegList = this.state.masterKegList.slice();
       newMasterKegList = response.data;
       this.setState({masterKegList: newMasterKegList});
-      console.log(this.state.masterKegList);
     } catch(error) {
       console.error(error);
     }
@@ -68,13 +67,13 @@ class App extends React.Component {
   postNewKeg(newKeg) {
     console.log(newKeg);
     console.log(newKeg.name);
-    console.log(newKeg.type);
-    axios.post('http://localhost:3000/keg', {
+    console.log(newKeg.variety);
+    axios.post('http://localhost:8000/api/kegs', {
       name: newKeg.name,
       brand: newKeg.brand,
       price: newKeg.price,
       alcoholContent: newKeg.alcoholContent,
-      type: newKeg.type,
+      variety: newKeg.variety,
       fill: 124
     })
     .then(function (response) {

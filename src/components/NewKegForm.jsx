@@ -7,17 +7,17 @@ function NewKegForm(props){
   let _brand = null;
   let _price = null;
   let _alcoholContent = null;
-  let _type = null;
+  let _variety = null;
 
   function handleNewKegSubmission(event){
     event.preventDefault();
-    props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), alcoholContent: parseInt(_alcoholContent.value), type: _type.value, fill: 124});
+    props.onAddNewKeg({name: _name.value, brand: _brand.value, price: parseInt(_price.value), alcoholContent: parseInt(_alcoholContent.value), variety: _variety.value, fill: 124});
     console.log(_name.value);
     // _name.value = '';
     // _brand.value = '';
     // _price.value = '';
     // _alcoholContent.value = '';
-    // _type.value = '';
+    // _variety.value = '';
   }
 
   return (
@@ -46,45 +46,55 @@ function NewKegForm(props){
           ref={(input) => {_alcoholContent = input;}}/>
         <input
           type="text"
-          id="type"
-          placeholder="Drink type"
-          ref={(input) => {_type = input;}}/>
+          id="variety"
+          placeholder="Drink variety"
+          ref={(input) => {_variety = input;}}/>
         <button type="submit">Add New Keg</button>
       </form>
       <style jsx>{`
                 .main {
-                    background-color: rgba(182,197,170,0.9);
-                    width: 80%;
-                    max-width: 1200px;
-                    margin: auto;
-                    padding-bottom: 200px;
-                    text-align: center;
+                  background-color: rgba(67,70,75,0.6);
+                  width: 80%;
+                  max-width: 1200px;
+                  margin: auto;
+                  padding-bottom: 200px;
+                  text-align: center;
                 }
                 h2 {
-                    padding-top: 50px;
-                    color: #35454e;
+                  padding-top: 30px;
+                  padding-bottom: 10px;
+                  color: transparent;
+                  text-shadow: 0 0 1px rgba(255,255,255,0.95);
+                  font-size: 30px;
+                  font-family: 'Nova Round';
                 }
                 form {
-                    display: flex;
-                    flex-direction: column;
-                    width: 60%;
-                    margin: 0 auto;
+                  display: flex;
+                  flex-direction: column;
+                  width: 40%;
+                  margin: 0 auto 30px auto;
                 }
                 input {
-                    margin: 20px;
-                    line-height: 30px;
+                    margin: 10px;
+                    line-height: 24px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                }
+                select {
+                  margin: 10px;
+                    line-height: 28px;
                     font-size: 18px;
                     border-radius: 5px;
                 }
                 button {
-                    font-size: 2.6vw;
-                    color: rgb(182,197,170);
-                    background-color: #35454e;
-                    height: 50px;
-                    border-radius: 10px;
-                    width: 60%;
-                    margin: auto;
-                }
+                  font-size: 1.8vw;
+                  color: white;
+                  background-color: black;
+                  height: 40px;
+                  border-radius: 8px;
+                  width: 40%;
+                  margin: auto;
+              }
             `}</style>
     </div>
   );

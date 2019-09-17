@@ -7,11 +7,11 @@ function Keg(props){
     <div className="container">
       <div className="main">
         <div className="main-info">
-        <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
+        <img src={require(`../assets/images/${props.variety}.jpg`)} alt="drink variety"/>
                 
         <div>
           <h2>{props.name}</h2>
-          <h4>{props.brand}</h4>
+          <h4>{props.brand.name}</h4>
         </div>
 
       </div>
@@ -63,10 +63,10 @@ function Keg(props){
 
 Keg.propTypes = {
   name: PropTypes.string,
-  brand: PropTypes.string,
+  brand: PropTypes.object,
   price: PropTypes.number,
   alcoholContent: PropTypes.number,
-  type: PropTypes.string,
+  variety: PropTypes.string,
   fill: PropTypes.number
 };
 
