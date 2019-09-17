@@ -10,21 +10,21 @@ function Header(){
   return(
     <div>
       <h1>Reactive Tap Room</h1>
-      <Link style={linkStyle} to="/">Tap Room</Link> | <Link style={linkStyle} to="/newkeg">Create Keg</Link><hr/>
+      <Link style={linkStyle} to="/">Tap Room</Link> | <Link style={linkStyle} to="/newkeg">Create Keg</Link>
       <style jsx>{`
         div {
-            background-color: #35454e;
-            color: #b6c5aa;
-            height: 100px;
-            padding: 30px 10% 5px 10%;
-        }
-        h1 {
-            padding-bottom: 20px;
-        }
-        hr {
-            border-color: darkgrey;
-            width: 40%;
-        }
+          background-color: rgb(10, 8, 5);
+          color: transparent;
+          text-shadow: 0 0 2px rgba(255,255,255,0.95);
+          height: 120px;
+          padding: 30px 10% 5px 10%;
+          text-align: center;
+      }
+      h1 {
+          padding-bottom: 10px;
+          font-family: 'Nova Round', sans-serif;
+          font-size: 70px;
+      }
             `}</style>
     </div>
   );
