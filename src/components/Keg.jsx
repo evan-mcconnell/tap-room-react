@@ -4,8 +4,9 @@ import KegFillControl from './KegFillControl';
 
 function Keg(props){
   return (
-    <div className="main">
-      <div className="sub-main">
+    <div className="container">
+      <div className="main">
+        <div className="main-info">
         <img src={require(`../assets/images/${props.type}.jpg`)} alt="drink type"/>
                 
         <div>
@@ -19,36 +20,42 @@ function Keg(props){
         <h5>{props.alcoholContent}%</h5>
       </div>
       <KegFillControl fill={props.fill}/>
+
+      </div>
       <style jsx>{`
                 .main {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    width: 80%;
-                    max-width: 500px;
-                    margin: 30px auto 0 auto;
-                    padding: 0 20px;
-                    align-items: center;
-                    color: #35454e;
-                    border-bottom: 1px solid #35454e;
-                }
-                .sub-main {
-                    display: flex;
-                    flex-direction: row;
-                }
-                h2 {
-                    margin-top: 10px;
-
-                }
-                img {
-                    width: 80px;
-                    height: 80px;
-                    margin-right: 30px;
-                    opacity: 0.8;
-                    border: 2px solid #35454e;
-                    border-radius: 20px;
-                    margin-bottom: 10px;
-                }
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  width: 85%;
+                  max-width: 500px;
+                  margin: 30px auto 0 auto;
+                  padding: 10px 26px;
+                  align-items: center;
+                  color: black;
+                  background-color: maroon;
+                  border: 5px solid rgb(10, 8, 5);
+              }
+              .main-info {
+                  display: flex;
+                  flex-direction: row;
+                  min-width: 280px;
+              }
+              h2 {
+                  margin-top: 10px;
+                  font-family: 'Nova Round', sans-serif;
+                  color: transparent;
+                  text-shadow: 0 0 2px rgba(255,255,255,0.95);
+                  font-size: 28px;
+              }
+              img {
+                  width: 80px;
+                  height: 80px;
+                  margin-right: 30px;
+                  opacity: 0.8;
+                  border: 2px solid #35454e;
+                  border-radius: 20px;
+              }
             `}</style>
     </div>
   );

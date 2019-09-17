@@ -20,17 +20,19 @@ function KegList(props) {
       </div>
       <style jsx>{`
                 .main {
-                    background-color: rgba(182,197,170,0.9);
-                    width: 80%;
-                    max-width: 1200px;
-                    margin: auto;
-                    padding-bottom: 200px;
-                }
-                .list {
-                    display: flex;
-                    flex-direction: rows;
-                    flex-wrap: wrap;
-                }
+                  background-color: rgba(67,70,75,0.6);
+                  width: 80%;
+                  max-width: 1200px;
+                  min-height: 55vh;
+                  margin: auto;
+                  padding-bottom: 200px;
+              }
+              .list {
+                  display: flex;
+                  justify-content: space-around;
+                  flex-direction: rows;
+                  flex-wrap: wrap;
+              }
             `}</style>
     </div>
   );
