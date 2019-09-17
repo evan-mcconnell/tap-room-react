@@ -15,7 +15,7 @@ function Header(){
         div {
             background-color: rgb(10, 8, 5);
             color: transparent;
-            text-shadow: 0 0 4px rgba(255,255,255,0.95);
+            text-shadow: 0 0 2px rgba(255,255,255,0.95);
             height: 120px;
             padding: 30px 10% 5px 10%;
             text-align: center;
